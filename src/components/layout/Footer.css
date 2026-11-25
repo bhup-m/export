@@ -578,3 +578,50 @@
     transform: none;
   }
 }
+
+
+/* View All Products Link */
+
+.footer-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 18px;
+  color: var(--color-gold);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-view-all svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.footer-view-all:hover {
+  color: var(--color-gold-light);
+}
+
+.footer-view-all:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.footer-view-all:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-view-all,
+  .footer-view-all svg {
+    transition: none;
+  }
+
+  .footer-view-all:hover svg {
+    transform: none;
+  }
+}

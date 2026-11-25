@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { getNames } from "country-list";
 import { motion, useReducedMotion } from "motion/react";
+import { useSearchParams } from "react-router-dom";
 
 import {
   Mail,
@@ -49,6 +50,10 @@ const defaultValues = {
 export default function ContactSection() {
   const reduceMotion = useReducedMotion();
 
+  const [searchParams] = useSearchParams();
+
+  const productSlug = searchParams.get("product");
+
   const [status, setStatus] = useState({
     type: "",
     message: "",
@@ -67,6 +72,25 @@ export default function ContactSection() {
     defaultValues,
     mode: "onBlur",
   });
+
+  /* Product-specific enquiry through React Router */
+
+  useEffect(() => {
+    if (!productSlug) return;
+
+    const selectedProduct = products.find(
+      (product) => product.slug === productSlug
+    );
+
+    if (selectedProduct) {
+      setValue("product", selectedProduct.name, {
+        shouldValidate: true,
+        shouldDirty: true,
+      });
+    }
+  }, [productSlug, setValue]);
+
+  /* Animation configuration */
 
   const animation = (delay = 0) => ({
     initial: {
@@ -87,33 +111,6 @@ export default function ContactSection() {
       ease: "easeOut",
     },
   });
-
-  /* Product-specific enquiry integration */
-
-  useEffect(() => {
-    const handleProductEnquiry = (event) => {
-      const productName = event.detail?.product;
-
-      if (productName) {
-        setValue("product", productName, {
-          shouldValidate: true,
-          shouldDirty: true,
-        });
-      }
-    };
-
-    window.addEventListener(
-      "product-enquiry",
-      handleProductEnquiry
-    );
-
-    return () => {
-      window.removeEventListener(
-        "product-enquiry",
-        handleProductEnquiry
-      );
-    };
-  }, [setValue]);
 
   /* Form submission */
 
@@ -136,10 +133,14 @@ export default function ContactSection() {
     } catch (error) {
       setStatus({
         type: "error",
-        message: error.message,
+        message:
+          error.message ||
+          "Unable to submit your enquiry. Please try again.",
       });
     }
   };
+
+  /* Contact information */
 
   const contactItems = [
     {
@@ -151,8 +152,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       label: "Our Roots",
-      value:
-        "Amalner, Jalgaon, Maharashtra, India",
+      value: "Amalner, Jalgaon, Maharashtra, India",
     },
     {
       icon: Globe2,
@@ -162,10 +162,11 @@ export default function ContactSection() {
     {
       icon: Handshake,
       label: "Business Enquiries",
-      value:
-        "Importers, Distributors & Wholesalers",
+      value: "Importers, Distributors & Wholesalers",
     },
   ];
+
+  /* Form accessibility and validation */
 
   const fieldError = (name) =>
     errors[name] ? (
@@ -227,6 +228,7 @@ export default function ContactSection() {
             className="contact-info-panel"
           >
             <div className="contact-info-content">
+
               <span className="contact-info-label">
                 GLOBAL BUSINESS ENQUIRIES
               </span>
@@ -282,7 +284,9 @@ export default function ContactSection() {
                   className="contact-whatsapp"
                 >
                   <MessageCircle size={21} />
+
                   Connect on WhatsApp
+
                   <ArrowUpRight size={17} />
                 </a>
               )}
@@ -365,8 +369,7 @@ export default function ContactSection() {
                     autoComplete="organization"
                     placeholder="Your company name"
                     {...register("companyName", {
-                      required:
-                        "Company name is required.",
+                      required: "Company name is required.",
                       validate: (value) =>
                         Boolean(value.trim()) ||
                         "Company name is required.",
@@ -647,11 +650,13 @@ export default function ContactSection() {
                       size={20}
                       className="contact-spinner"
                     />
+
                     Submitting Enquiry...
                   </>
                 ) : (
                   <>
                     Submit Business Enquiry
+
                     <Send size={19} />
                   </>
                 )}

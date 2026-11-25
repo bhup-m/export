@@ -2,47 +2,45 @@
 import {
   Globe2,
   ArrowUpRight,
-  ChevronRight,
   Mail,
   MapPin,
   Briefcase,
   Camera,
   Users,
   MessageCircle,
-} from "lucide-react";;
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
 
 import { contactDetails } from "../../data/contactDetails";
 import { products } from "../../data/products";
 
-import "./Footer.css";
+import {
+  footerLinks,
+  ROUTES,
+  getProductEnquiryUrl,
+} from "../../data/navigation";
 
-const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Products", href: "#products" },
-  { label: "Our Farmers", href: "#farmers" },
-  { label: "Global Markets", href: "#markets" },
-  { label: "Contact Us", href: "#contact" },
-];
+import "./Footer.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-        name: "LinkedIn",
-        icon: Briefcase,
-        href: contactDetails.socialLinks?.linkedin,
+      name: "LinkedIn",
+      icon: Briefcase,
+      href: contactDetails.socialLinks?.linkedin,
     },
     {
-        name: "Instagram",
-        icon: Camera,
-        href: contactDetails.socialLinks?.instagram,
+      name: "Instagram",
+      icon: Camera,
+      href: contactDetails.socialLinks?.instagram,
     },
     {
-        name: "Facebook",
-        icon: Users,
-        href: contactDetails.socialLinks?.facebook,
+      name: "Facebook",
+      icon: Users,
+      href: contactDetails.socialLinks?.facebook,
     },
     {
       name: "WhatsApp",
@@ -69,16 +67,6 @@ export default function Footer() {
     },
   ].filter((link) => Boolean(link.href));
 
-  const handleProductEnquiry = (productName) => {
-    window.dispatchEvent(
-      new CustomEvent("product-enquiry", {
-        detail: {
-          product: productName,
-        },
-      })
-    );
-  };
-
   return (
     <footer className="site-footer">
       <div className="footer-container">
@@ -103,10 +91,13 @@ export default function Footer() {
             </p>
           </div>
 
-          <a href="#contact" className="footer-cta-btn">
+          <Link
+            to={ROUTES.CONTACT}
+            className="footer-cta-btn"
+          >
             Let's Do Business
             <ArrowUpRight size={20} />
-          </a>
+          </Link>
         </div>
 
         {/* Main Footer */}
@@ -116,8 +107,8 @@ export default function Footer() {
           {/* Company Branding */}
 
           <div className="footer-brand-column">
-            <a
-              href="#home"
+            <Link
+              to={ROUTES.HOME}
               className="footer-brand"
               aria-label="Sharanga Global Exports home"
             >
@@ -134,7 +125,7 @@ export default function Footer() {
                   GLOBAL EXPORTS
                 </span>
               </div>
-            </a>
+            </Link>
 
             <p className="footer-brand-description">
               Rooted in generations of agricultural
@@ -186,12 +177,11 @@ export default function Footer() {
             <h3>Quick Links</h3>
 
             <ul className="footer-links">
-              {quickLinks.map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>
-                    <ChevronRight size={14} />
+                  <Link to={link.href}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -208,28 +198,22 @@ export default function Footer() {
             <ul className="footer-links">
               {products.slice(0, 6).map((product) => (
                 <li key={product.id}>
-                  <a
-                    href="#contact"
-                    onClick={() =>
-                      handleProductEnquiry(product.name)
-                    }
+                  <Link
+                    to={getProductEnquiryUrl(product.slug)}
                   >
-                    <ChevronRight size={14} />
                     {product.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
-
-              <li>
-                <a
-                  href="#products"
-                  className="footer-view-all"
-                >
-                  View All Products
-                  <ArrowUpRight size={14} />
-                </a>
-              </li>
             </ul>
+
+            <Link
+              to={ROUTES.PRODUCTS}
+              className="footer-view-all"
+            >
+              View All Products
+              <ArrowUpRight size={16} />
+            </Link>
           </nav>
 
           {/* Contact Information */}

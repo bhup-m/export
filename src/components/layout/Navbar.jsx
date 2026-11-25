@@ -6,8 +6,10 @@ import {
   X,
   ArrowUpRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { navLinks, ROUTES } from "../../data/navigation";
 
-const navLinks = [
+const navLink = [
   { name: "Home", href: "#home" },
   { name: "About Us", href: "#about" },
   { name: "Products", href: "#products" },
@@ -27,8 +29,7 @@ function Navbar() {
       <div className="mx-auto flex h-[76px] items-center justify-between px-5 sm:px-7 xl:h-[88px] xl:max-w-[1380px] xl:px-8 2xl:max-w-[1600px] 2xl:px-12">
 
         {/* BRAND LOGO */}
-        <a
-          href="#home"
+        <Link to={ROUTES.HOME}
           onClick={closeMenu}
           className="flex shrink-0 items-center gap-2.5 sm:gap-3"
         >
@@ -49,31 +50,31 @@ function Navbar() {
               GLOBAL EXPORTS
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden items-center gap-5 xl:flex 2xl:gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
+          {navLink.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
               className="group relative whitespace-nowrap py-2 text-[12px] font-semibold text-[#102747] transition-colors duration-300 hover:text-[#C5A052] 2xl:text-[13px]"
             >
               {link.name}
 
               <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C5A052] transition-all duration-300 group-hover:w-full" />
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* DESKTOP CONTACT BUTTON */}
-        <a
-          href="#contact"
+        <Link
+          to={ROUTES.CONTACT}
           className="hidden shrink-0 items-center gap-2 rounded-sm bg-[#102747] px-4 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#C5A052] hover:text-[#102747] xl:inline-flex 2xl:px-5 2xl:text-[13px]"
         >
           Let's Connect
           <ArrowUpRight size={17} />
-        </a>
+        </Link>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -104,26 +105,26 @@ function Navbar() {
         <nav className="mx-auto flex max-w-[700px] flex-col px-6 py-4 sm:px-8">
 
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
+            <Link
+              key={link.label}
+              to={link.href}
               onClick={closeMenu}
               tabIndex={menuOpen ? 0 : -1}
               className="border-b border-slate-100 py-4 text-sm font-semibold text-[#102747] transition-colors duration-300 hover:pl-2 hover:text-[#C5A052]"
             >
-              {link.name}
-            </a>
+              {link.label}
+            </Link>
           ))}
 
-          <a
-            href="#contact"
+          <Link
+            to={ROUTES.CONTACT}
             onClick={closeMenu}
             tabIndex={menuOpen ? 0 : -1}
             className="mt-5 flex items-center justify-center gap-2 rounded-sm bg-[#102747] px-5 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C5A052] hover:text-[#102747]"
           >
             Let's Connect
             <ArrowUpRight size={17} />
-          </a>
+          </Link>
         </nav>
       </div>
 
