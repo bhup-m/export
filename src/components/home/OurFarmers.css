@@ -1,0 +1,837 @@
+
+/* =========================================
+   FARMERS SECTION
+========================================= */
+
+.farmers-section {
+  width: 100%;
+  padding: var(--section-spacing, 100px) 0;
+  background: var(--color-white);
+}
+
+.farmers-container {
+  width: 100%;
+  max-width: var(--container-width, 1240px);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.farmers-heading {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.farmers-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #987633;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.farmers-eyebrow > span {
+  flex-shrink: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.farmers-heading h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 60px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.farmers-heading h2 span {
+  display: block;
+  margin-top: 6px;
+  color: #987633;
+}
+
+.farmers-heading > p {
+  max-width: 680px;
+  margin: 22px auto 0;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.farmers-main-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+  align-items: center;
+  gap: 60px;
+}
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+.farmers-image-wrapper {
+  position: relative;
+  min-width: 0;
+  padding: 0 20px 30px 0;
+}
+
+.farmers-image-wrapper::before {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  bottom: 8px;
+  left: 22px;
+  border: 2px solid var(--color-gold);
+  border-radius: 6px;
+  content: "";
+  pointer-events: none;
+}
+
+.farmers-main-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 6px;
+  background: var(--color-light-grey);
+}
+
+.farmers-main-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(9, 27, 50, 0.25),
+    transparent 45%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.farmers-main-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.farmers-image-wrapper:hover
+.farmers-main-image img {
+  transform: scale(1.035);
+}
+
+/* =========================================
+   LOCATION BADGE
+========================================= */
+
+.farmers-location {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 60px);
+  padding: 10px 14px;
+  border: 1px solid
+    rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(9, 27, 50, 0.85);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+
+.farmers-location svg {
+  flex-shrink: 0;
+  color: var(--color-gold-light);
+}
+
+/* =========================================
+   AGRICULTURAL LEGACY
+========================================= */
+
+.farmers-legacy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+  padding: 24px 28px;
+  border-left: 4px solid var(--color-gold);
+  border-radius: 4px;
+  background: var(--color-primary);
+  box-shadow: 0 12px 30px
+    rgba(9, 27, 50, 0.2);
+}
+
+.farmers-legacy-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid
+    rgba(197, 160, 82, 0.4);
+  border-radius: 50%;
+  color: var(--color-gold-light);
+}
+
+.farmers-legacy strong {
+  display: block;
+  color: var(--color-gold-light);
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.farmers-legacy span {
+  display: block;
+  margin-top: 7px;
+  color: var(--color-white);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   FARMER NETWORK CONTENT
+========================================= */
+
+.farmers-content {
+  min-width: 0;
+}
+
+.farmers-content-label {
+  margin-bottom: 15px;
+  color: #987633;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.farmers-content > h3 {
+  margin: 0 0 22px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.farmers-content > h3 span {
+  display: block;
+  color: #987633;
+}
+
+.farmers-intro {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   FARMER STRENGTHS
+========================================= */
+
+.farmers-strengths {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.farmers-strength {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.farmers-strength-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid
+    rgba(197, 160, 82, 0.25);
+  border-radius: 5px;
+  background: rgba(197, 160, 82, 0.1);
+  color: #987633;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.farmers-strength:hover
+.farmers-strength-icon {
+  background: var(--color-primary);
+  color: var(--color-gold-light);
+}
+
+.farmers-strength-content h4 {
+  margin: 0 0 6px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.farmers-strength-content p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   SOURCING NETWORK HEADING
+========================================= */
+
+.farmers-network-heading {
+  max-width: 800px;
+  margin: 75px auto 35px;
+  text-align: center;
+}
+
+.farmers-network-heading > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #987633;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.farmers-network-heading h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.farmers-network-heading h3 span {
+  color: #987633;
+}
+
+/* =========================================
+   SOURCING NETWORK GRID
+========================================= */
+
+.farmers-network-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.farmers-network-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.farmers-network-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 15px 35px
+    rgba(16, 39, 71, 0.12);
+}
+
+/* =========================================
+   NETWORK CARD IMAGE
+========================================= */
+
+.farmers-card-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--color-light-grey);
+}
+
+.farmers-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.farmers-network-card:hover
+.farmers-card-image img {
+  transform: scale(1.06);
+}
+
+.farmers-card-number {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 5px;
+  background: var(--color-primary);
+  color: var(--color-gold-light);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* =========================================
+   NETWORK CARD CONTENT
+========================================= */
+
+.farmers-card-content {
+  flex: 1;
+  padding: 25px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.farmers-network-card:hover
+.farmers-card-content {
+  border-bottom-color: var(--color-gold);
+}
+
+.farmers-card-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #987633;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.farmers-card-content h4 {
+  margin: 0 0 12px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.farmers-card-content p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   PARTNERSHIP CTA
+========================================= */
+
+.farmers-cta {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  overflow: hidden;
+  margin-top: 45px;
+  padding: 35px 40px;
+  border-left: 4px solid var(--color-gold);
+  border-radius: 5px;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
+}
+
+.farmers-cta::before {
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border: 1px solid
+    rgba(197, 160, 82, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px rgba(197, 160, 82, 0.04),
+    0 0 0 70px rgba(197, 160, 82, 0.025);
+  content: "";
+  pointer-events: none;
+}
+
+.farmers-cta-content {
+  max-width: 750px;
+}
+
+.farmers-cta-content > span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.farmers-cta-content h3 {
+  margin: 0 0 10px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(23px, 2.5vw, 32px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.farmers-cta-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.farmers-cta-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border-radius: 4px;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.farmers-cta-button:hover {
+  transform: translateY(-3px);
+  background: var(--color-gold-light);
+}
+
+.farmers-cta-button:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media screen and (min-width: 1600px) {
+  .farmers-container {
+    padding-inline: 48px;
+  }
+
+  .farmers-main-layout {
+    gap: 80px;
+  }
+
+  .farmers-intro {
+    font-size: 16px;
+  }
+
+  .farmers-strength-content h4 {
+    font-size: 17px;
+  }
+
+  .farmers-strength-content p {
+    font-size: 15px;
+  }
+
+  .farmers-network-grid {
+    gap: 35px;
+  }
+
+  .farmers-card-content {
+    padding: 30px;
+  }
+
+  .farmers-card-content p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   COMPACT DESKTOP
+========================================= */
+
+@media screen and (max-width: 1359px) {
+  .farmers-main-layout {
+    gap: 40px;
+  }
+
+  .farmers-strengths {
+    gap: 18px;
+  }
+
+  .farmers-network-grid {
+    gap: 20px;
+  }
+
+  .farmers-card-content {
+    padding: 22px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 1024px) {
+  .farmers-container {
+    padding-inline: 28px;
+  }
+
+  .farmers-main-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .farmers-image-wrapper {
+    width: 100%;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+
+  .farmers-main-image {
+    aspect-ratio: 5 / 4;
+  }
+
+  .farmers-strengths {
+    display: grid;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  .farmers-network-heading {
+    margin-top: 55px;
+  }
+
+  .farmers-card-content {
+    padding: 18px;
+  }
+
+  .farmers-card-content h4 {
+    font-size: 21px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 767px) {
+  .farmers-container {
+    padding-inline: 24px;
+  }
+
+  .farmers-heading {
+    margin-bottom: 30px;
+  }
+
+  .farmers-eyebrow {
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .farmers-eyebrow > span {
+    width: 15px;
+  }
+
+  .farmers-heading h2 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  .farmers-heading > p {
+    font-size: 14px;
+  }
+
+  .farmers-main-layout {
+    gap: 30px;
+  }
+
+  .farmers-main-image {
+    aspect-ratio: 4 / 4.5;
+  }
+
+  .farmers-image-wrapper {
+    padding: 0 12px 22px 0;
+  }
+
+  .farmers-image-wrapper::before {
+    top: 15px;
+    left: 15px;
+  }
+
+  .farmers-location {
+    top: 12px;
+    left: 12px;
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .farmers-legacy {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .farmers-legacy-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .farmers-legacy-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .farmers-legacy strong {
+    font-size: 28px;
+  }
+
+  .farmers-legacy span {
+    font-size: 10px;
+  }
+
+  .farmers-strengths {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .farmers-strength-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .farmers-network-heading {
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+
+  .farmers-network-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .farmers-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-top: 30px;
+    padding: 25px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 575px) {
+  .farmers-network-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .farmers-card-content {
+    padding: 22px;
+  }
+
+  .farmers-card-content h4 {
+    font-size: 24px;
+  }
+
+  .farmers-cta-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .farmers-container {
+    padding-inline: 16px;
+  }
+
+  .farmers-eyebrow {
+    font-size: 8px;
+  }
+
+  .farmers-eyebrow > span {
+    width: 10px;
+  }
+
+  .farmers-legacy {
+    padding: 14px;
+  }
+
+  .farmers-legacy strong {
+    font-size: 24px;
+  }
+
+  .farmers-strength {
+    gap: 12px;
+  }
+
+  .farmers-cta {
+    padding: 22px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .farmers-main-image img,
+  .farmers-card-image img,
+  .farmers-strength-icon,
+  .farmers-network-card,
+  .farmers-card-content,
+  .farmers-cta-button {
+    transition: none;
+  }
+
+  .farmers-image-wrapper:hover
+  .farmers-main-image img,
+  .farmers-network-card:hover
+  .farmers-card-image img,
+  .farmers-cta-button:hover {
+    transform: none;
+  }
+}

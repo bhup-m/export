@@ -1,0 +1,364 @@
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  padding: var(--section-spacing, 100px) 0;
+  background: var(--color-white);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+  width: 100%;
+  max-width: var(--container-width, 1240px);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+/* =========================================
+   IMAGE SECTION
+========================================= */
+
+.about-image-wrapper {
+  position: relative;
+  min-width: 0;
+  padding: 0 25px 25px 0;
+}
+
+.about-image-frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.about-image-frame::before {
+  position: absolute;
+  z-index: -1;
+  inset: 20px -20px -20px 20px;
+  border: 2px solid var(--color-gold);
+  content: "";
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  height: clamp(460px, 40vw, 650px);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   EXPERIENCE CARD
+========================================= */
+
+.about-experience-card {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 220px;
+  padding: 25px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 12px 35px rgba(16, 39, 71, 0.2);
+}
+
+.about-experience-number {
+  color: var(--color-gold-light);
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.about-experience-years {
+  margin-left: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.about-experience-line {
+  width: 42px;
+  height: 2px;
+  margin-block: 16px;
+  background: var(--color-gold);
+}
+
+.about-experience-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   COMPANY CONTENT
+========================================= */
+
+.about-content {
+  min-width: 0;
+}
+
+.about-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #987633;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.about-gold-line {
+  flex-shrink: 0;
+  width: 35px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.about-title {
+  margin: 0 0 24px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 3.2vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.about-title span {
+  display: block;
+  margin-top: 6px;
+  color: #987633;
+}
+
+.about-description {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.about-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block: 28px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.about-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.about-highlight-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 4px;
+  background: rgba(197, 160, 82, 0.08);
+  color: #987633;
+}
+
+.about-highlight-item h3 {
+  margin: 0 0 4px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.about-highlight-item p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.about-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 14px 25px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-cta:hover {
+  transform: translateY(-3px);
+  background: var(--color-gold);
+  color: var(--color-primary);
+}
+
+.about-cta:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media screen and (min-width: 1600px) {
+  .about-container {
+    padding-inline: 48px;
+  }
+
+  .about-description {
+    font-size: 17px;
+  }
+
+  .about-highlight-item h3 {
+    font-size: 17px;
+  }
+
+  .about-highlight-item p {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 1024px) {
+  .about-container {
+    gap: 35px;
+    padding-inline: 28px;
+  }
+
+  .about-image {
+    height: 550px;
+  }
+
+  .about-experience-card {
+    width: 190px;
+    padding: 20px;
+  }
+
+  .about-experience-number {
+    font-size: 48px;
+  }
+
+  .about-title {
+    font-size: clamp(28px, 3.5vw, 38px);
+  }
+}
+
+/* =========================================
+   MOBILE AND SMALL TABLET
+========================================= */
+
+@media screen and (max-width: 767px) {
+  .about-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+    padding-inline: 24px;
+  }
+
+  .about-image {
+    height: clamp(300px, 85vw, 480px);
+  }
+
+  .about-image-wrapper {
+    padding: 0 15px 15px 0;
+  }
+
+  .about-image-frame::before {
+    inset: 12px -12px -12px 12px;
+  }
+
+  .about-experience-card {
+    width: 180px;
+    padding: 18px;
+  }
+
+  .about-experience-number {
+    font-size: 42px;
+  }
+
+  .about-experience-years {
+    font-size: 16px;
+  }
+
+  .about-title {
+    font-size: clamp(30px, 7vw, 42px);
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .about-highlights {
+    gap: 18px;
+    margin-block: 24px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 400px) {
+  .about-container {
+    padding-inline: 20px;
+  }
+
+  .about-eyebrow {
+    font-size: 10px;
+  }
+
+  .about-highlight-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-cta {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-cta {
+    transition: none;
+  }
+
+  .about-cta:hover {
+    transform: none;
+  }
+}

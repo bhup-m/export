@@ -1,0 +1,591 @@
+
+/* =========================================
+   QUALITY & STANDARDS SECTION
+========================================= */
+
+.quality-section {
+  position: relative;
+  width: 100%;
+  padding: var(--section-spacing, 100px) 0;
+  background: var(--color-off-white);
+}
+
+.quality-container {
+  width: 100%;
+  max-width: var(--container-width, 1240px);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.quality-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.quality-content {
+  min-width: 0;
+}
+
+.quality-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  color: #987633;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.quality-eyebrow span {
+  flex-shrink: 0;
+  width: 35px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.quality-title {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.8vw, 58px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.quality-title span {
+  display: block;
+  margin-top: 5px;
+  color: #987633;
+}
+
+.quality-description {
+  margin: 22px 0 30px;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   QUALITY STANDARDS LIST
+========================================= */
+
+.quality-standards-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.quality-standard-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e3e7;
+}
+
+.quality-standard-item:first-child {
+  padding-top: 0;
+}
+
+.quality-standard-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* =========================================
+   QUALITY ICONS
+========================================= */
+
+.quality-standard-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 5px;
+  background: rgba(197, 160, 82, 0.08);
+  color: #987633;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.quality-standard-item:hover
+  .quality-standard-icon {
+  background: var(--color-primary);
+  color: var(--color-gold-light);
+}
+
+.quality-standard-content {
+  min-width: 0;
+}
+
+.quality-standard-content h3 {
+  margin: 0 0 6px;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.quality-standard-content p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   QUALITY IMAGE
+========================================= */
+
+.quality-visual {
+  position: relative;
+  min-width: 0;
+  padding: 0 20px 90px 0;
+}
+
+.quality-image-wrapper {
+  position: relative;
+  isolation: isolate;
+}
+
+.quality-image-wrapper::before {
+  position: absolute;
+  z-index: -1;
+  inset: 18px -18px -18px 18px;
+  border: 2px solid var(--color-gold);
+  content: "";
+}
+
+.quality-image {
+  display: block;
+  width: 100%;
+  height: clamp(500px, 43vw, 680px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.quality-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 50%,
+    rgba(9, 27, 50, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+/* =========================================
+   QUALITY COMMITMENT CARD
+========================================= */
+
+.quality-commitment-card {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(90%, 360px);
+  padding: 32px;
+  border-top: 3px solid var(--color-gold);
+  background: var(--color-primary);
+  box-shadow: 0 15px 40px rgba(16, 39, 71, 0.2);
+}
+
+.quality-commitment-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(197, 160, 82, 0.4);
+  border-radius: 50%;
+  color: var(--color-gold-light);
+}
+
+.quality-commitment-label {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.quality-commitment-card h3 {
+  margin: 0 0 12px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.quality-commitment-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.quality-commitment-line {
+  width: 45px;
+  height: 2px;
+  margin-top: 20px;
+  background: var(--color-gold);
+}
+
+/* =========================================
+   BUYER REQUIREMENTS BANNER
+========================================= */
+
+.quality-bottom-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 55px;
+  padding: 30px 32px;
+  border: 1px solid rgba(197, 160, 82, 0.5);
+  border-left: 4px solid var(--color-gold);
+  border-radius: 4px;
+  background: var(--color-white);
+}
+
+.quality-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.quality-banner-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(197, 160, 82, 0.1);
+  color: #987633;
+}
+
+.quality-banner-content h3 {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: 600;
+}
+
+.quality-banner-content p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.quality-cta {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 14px 24px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.quality-cta:hover {
+  transform: translateY(-3px);
+  background: var(--color-gold);
+  color: var(--color-primary);
+}
+
+.quality-cta:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media screen and (min-width: 1600px) {
+  .quality-container {
+    padding-inline: 48px;
+  }
+
+  .quality-description {
+    font-size: 17px;
+  }
+
+  .quality-standard-content h3 {
+    font-size: 18px;
+  }
+
+  .quality-standard-content p {
+    font-size: 16px;
+  }
+
+  .quality-standard-item {
+    padding-block: 24px;
+  }
+
+  .quality-image {
+    height: 750px;
+  }
+
+  .quality-commitment-card {
+    width: min(90%, 400px);
+    padding: 38px;
+  }
+}
+
+/* =========================================
+   COMPACT DESKTOP
+========================================= */
+
+@media screen and (max-width: 1359px) {
+  .quality-layout {
+    gap: 45px;
+  }
+
+  .quality-standard-item {
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media screen and (max-width: 1024px) {
+  .quality-container {
+    padding-inline: 28px;
+  }
+
+  .quality-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .quality-standards-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .quality-standard-item,
+  .quality-standard-item:first-child,
+  .quality-standard-item:last-child {
+    padding: 18px;
+    border: 1px solid #e0e3e7;
+    border-radius: 4px;
+    background: var(--color-white);
+  }
+
+  .quality-image {
+    height: 450px;
+  }
+
+  .quality-bottom-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .quality-cta {
+    margin-left: 80px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width: 767px) {
+  .quality-container {
+    padding-inline: 24px;
+  }
+
+  .quality-layout {
+    gap: 35px;
+  }
+
+  .quality-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .quality-title {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  .quality-description {
+    margin: 18px 0 25px;
+    font-size: 14px;
+  }
+
+  .quality-standards-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .quality-standard-item,
+  .quality-standard-item:first-child,
+  .quality-standard-item:last-child {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .quality-standard-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .quality-standard-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .quality-standard-content h3 {
+    font-size: 15px;
+  }
+
+  .quality-standard-content p {
+    font-size: 13px;
+  }
+
+  .quality-visual {
+    padding: 0 12px 100px 0;
+  }
+
+  .quality-image-wrapper::before {
+    inset: 10px -10px -10px 10px;
+  }
+
+  .quality-image {
+    height: clamp(320px, 85vw, 450px);
+  }
+
+  .quality-commitment-card {
+    width: min(90%, 310px);
+    padding: 24px;
+  }
+
+  .quality-commitment-card h3 {
+    font-size: 24px;
+  }
+
+  .quality-commitment-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+  }
+
+  .quality-commitment-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .quality-bottom-banner {
+    margin-top: 35px;
+    padding: 24px;
+  }
+
+  .quality-banner-content {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .quality-banner-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .quality-banner-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .quality-banner-content p {
+    font-size: 13px;
+  }
+
+  .quality-cta {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 400px) {
+  .quality-container {
+    padding-inline: 20px;
+  }
+
+  .quality-standard-item,
+  .quality-standard-item:first-child,
+  .quality-standard-item:last-child {
+    padding: 15px;
+  }
+
+  .quality-commitment-card {
+    padding: 20px;
+  }
+
+  .quality-bottom-banner {
+    padding: 20px 16px;
+  }
+
+  .quality-cta {
+    gap: 8px;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .quality-standard-icon,
+  .quality-cta {
+    transition: none;
+  }
+
+  .quality-cta:hover {
+    transform: none;
+  }
+}

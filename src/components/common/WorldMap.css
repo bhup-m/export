@@ -1,0 +1,200 @@
+
+.world-map-wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 6px;
+  background: radial-gradient(
+    ellipse at center,
+    #193754 0%,
+    #102747 70%
+  );
+}
+
+.world-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Map Routes */
+
+.world-map-route {
+  opacity: 0.55;
+  pointer-events: none;
+  animation: marketRouteFlow 18s linear infinite;
+}
+
+@keyframes marketRouteFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+/* Map Markers */
+
+.world-map-marker {
+  cursor: pointer;
+  outline: none;
+}
+
+.world-map-marker:focus-visible {
+  outline: 2px solid #D9BC7A;
+}
+
+.market-marker-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: marketPulse 2.5s ease-out infinite;
+}
+
+.india-marker-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: marketPulse 2s ease-out infinite;
+}
+
+@keyframes marketPulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.india-map-label {
+  fill: #D9BC7A;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+/* Tooltip */
+
+.world-map-tooltip-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+}
+
+.world-map-tooltip {
+  padding: 8px 18px;
+  border: 1px solid rgba(197, 160, 82, 0.4);
+  border-radius: 4px;
+  background: var(--color-primary-dark);
+  color: var(--color-gold-light);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Map Legend */
+
+.world-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 15px 10px 5px;
+}
+
+.world-map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+}
+
+.legend-origin,
+.legend-market {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-origin {
+  background: var(--color-gold);
+}
+
+.legend-market {
+  background: var(--color-white);
+}
+
+.legend-route {
+  width: 24px;
+  border-top: 2px dashed var(--color-gold);
+}
+
+/* Tablet */
+
+@media screen and (max-width: 1024px) {
+  .world-map-wrapper {
+    padding: 15px;
+  }
+
+  .world-map-legend {
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+  .world-map-wrapper {
+    padding: 10px;
+  }
+
+  .world-map-legend {
+    gap: 12px;
+  }
+
+  .world-map-legend-item {
+    font-size: 10px;
+  }
+
+  .world-map-tooltip {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .world-map-wrapper {
+    padding: 5px;
+  }
+
+  .world-map-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 15px 15px;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .world-map-route,
+  .market-marker-pulse,
+  .india-marker-pulse {
+    animation: none;
+  }
+}

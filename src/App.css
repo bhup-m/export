@@ -1,0 +1,53 @@
+
+.website-preview {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(9, 27, 50, 0.95),
+      rgba(16, 39, 71, 0.68)
+    ),
+    url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=2000")
+    center/cover no-repeat;
+}
+
+.preview-content {
+  max-width: 720px;
+  color: white;
+}
+
+.preview-content > span {
+  color: var(--color-gold-light);
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.preview-content h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.15;
+  margin: 24px 0;
+}
+
+.preview-content h1 em {
+  color: var(--color-gold-light);
+  font-weight: 400;
+}
+
+.preview-content p {
+  max-width: 500px;
+  color: #e1e5eb;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .website-preview {
+    min-height: 70vh;
+    padding: 60px 6%;
+  }
+}
