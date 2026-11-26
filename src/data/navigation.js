@@ -1,7 +1,7 @@
 
 export const ROUTES = {
   HOME: "/",
-  ABOUT: "/#about",
+  ABOUT: "/about",
   PRODUCTS: "/#products",
   FARMERS: "/#farmers",
   PROCESS: "/#process",
@@ -11,20 +11,53 @@ export const ROUTES = {
 };
 
 export const navLinks = [
-  { label: "Home", href: ROUTES.HOME },
-  { label: "About Us", href: ROUTES.ABOUT },
-  { label: "Products", href: ROUTES.PRODUCTS },
-  { label: "Our Farmers", href: ROUTES.FARMERS },
-  { label: "Global Markets", href: ROUTES.MARKETS },
+  {
+    label: "Home",
+    href: ROUTES.HOME,
+  },
+  {
+    label: "About Us",
+    href: ROUTES.ABOUT,
+  },
+  {
+    label: "Products",
+    href: ROUTES.PRODUCTS,
+  },
+  {
+    label: "Our Farmers",
+    href: ROUTES.FARMERS,
+  },
+  {
+    label: "Global Markets",
+    href: ROUTES.MARKETS,
+  },
 ];
 
 export const footerLinks = [
-  { label: "Home", href: ROUTES.HOME },
-  { label: "About Us", href: ROUTES.ABOUT },
-  { label: "Our Products", href: ROUTES.PRODUCTS },
-  { label: "Our Farmers", href: ROUTES.FARMERS },
-  { label: "Global Markets", href: ROUTES.MARKETS },
-  { label: "Contact Us", href: ROUTES.CONTACT },
+  {
+    label: "Home",
+    href: ROUTES.HOME,
+  },
+  {
+    label: "About Us",
+    href: ROUTES.ABOUT,
+  },
+  {
+    label: "Our Products",
+    href: ROUTES.PRODUCTS,
+  },
+  {
+    label: "Our Farmers",
+    href: ROUTES.FARMERS,
+  },
+  {
+    label: "Global Markets",
+    href: ROUTES.MARKETS,
+  },
+  {
+    label: "Contact Us",
+    href: ROUTES.CONTACT,
+  },
 ];
 
 export function getProductEnquiryUrl(productSlug) {
@@ -34,7 +67,5 @@ export function getProductEnquiryUrl(productSlug) {
     product: productSlug,
   });
 
-  return `${pathname}?${params.toString()}${
-    hash ? `#${hash}` : ""
-  }`;
+  return `${pathname}?${params.toString()}${hash ? `#${hash}` : ""}`;
 }

@@ -1,0 +1,442 @@
+
+/* ========================================
+   CORE BUSINESS VALUES
+======================================== */
+
+.core-values {
+  position: relative;
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-off-white);
+}
+
+.core-values-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.core-values-header {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.core-values-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #98752e;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.5;
+}
+
+.core-values-eyebrow > span {
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.core-values-header h2 {
+  margin: 0 0 22px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.core-values-header h2 > span {
+  display: block;
+  margin-top: 6px;
+  color: #98752e;
+}
+
+.core-values-header p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   VALUES GRID
+======================================== */
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 26px;
+}
+
+/* ========================================
+   VALUE CARDS
+======================================== */
+
+.core-values-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: var(--color-white);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.core-values-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-gold);
+  content: "";
+  transition: width 0.4s ease;
+}
+
+/* Decorative Number */
+
+.core-values-card-number {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: rgba(16, 39, 71, 0.055);
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Card Icon */
+
+.core-values-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 6px;
+  background-color: rgba(197, 160, 82, 0.09);
+  color: #98752e;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Card Heading */
+
+.core-values-card h3 {
+  position: relative;
+  margin: 0 0 15px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Card Description */
+
+.core-values-card p {
+  flex: 1;
+  margin: 0 0 25px;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Gold Accent */
+
+.core-values-card-accent {
+  width: 32px;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+
+/* ========================================
+   CARD HOVER EFFECTS
+======================================== */
+
+@media (hover: hover) {
+  .core-values-card:hover {
+    border-color: rgba(197, 160, 82, 0.6);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .core-values-card:hover::before {
+    width: 100%;
+  }
+
+  .core-values-card:hover .core-values-card-icon {
+    background-color: var(--color-primary);
+    color: var(--color-gold-light);
+  }
+
+  .core-values-card:hover .core-values-card-accent {
+    width: 60px;
+  }
+}
+
+/* ========================================
+   CLOSING STATEMENT
+======================================== */
+
+.core-values-statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 950px;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+.core-values-statement > span {
+  flex-shrink: 0;
+  width: 45px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.core-values-statement p {
+  margin: 0;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .core-values-header {
+    margin-bottom: 65px;
+  }
+
+  .core-values-header h2 {
+    font-size: 60px;
+  }
+
+  .core-values-grid {
+    gap: 32px;
+  }
+
+  .core-values-card {
+    padding: 42px;
+  }
+
+  .core-values-card h3 {
+    font-size: 28px;
+  }
+
+  .core-values-card p {
+    font-size: 15px;
+  }
+
+  .core-values-statement {
+    margin-top: 60px;
+  }
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .core-values-header {
+    margin-bottom: 45px;
+  }
+
+  .core-values-grid {
+    gap: 20px;
+  }
+
+  .core-values-card {
+    padding: 26px;
+  }
+
+  .core-values-card h3 {
+    font-size: 23px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .core-values-container {
+    width: calc(100% - 64px);
+  }
+
+  .core-values-header {
+    margin-bottom: 40px;
+  }
+
+  .core-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .core-values-card {
+    padding: 28px;
+  }
+
+  .core-values-card-icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 22px;
+  }
+
+  .core-values-statement p {
+    font-size: 18px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .core-values-container {
+    width: calc(100% - 40px);
+  }
+
+  .core-values-header {
+    margin-bottom: 32px;
+  }
+
+  .core-values-eyebrow {
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+  }
+
+  .core-values-eyebrow > span {
+    width: 18px;
+  }
+
+  .core-values-header h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .core-values-header p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .core-values-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .core-values-card {
+    padding: 26px;
+  }
+
+  .core-values-card-number {
+    top: 18px;
+    right: 20px;
+    font-size: 58px;
+  }
+
+  .core-values-card-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 20px;
+  }
+
+  .core-values-card-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .core-values-card h3 {
+    margin-bottom: 12px;
+    font-size: 24px;
+  }
+
+  .core-values-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .core-values-statement {
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .core-values-statement > span {
+    width: 20px;
+  }
+
+  .core-values-statement p {
+    font-size: 17px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .core-values-container {
+    width: calc(100% - 32px);
+  }
+
+  .core-values-header h2 {
+    font-size: 30px;
+  }
+
+  .core-values-card {
+    padding: 22px;
+  }
+
+  .core-values-card h3 {
+    font-size: 22px;
+  }
+
+  .core-values-statement > span {
+    display: none;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .core-values-card,
+  .core-values-card::before,
+  .core-values-card-icon,
+  .core-values-card-accent {
+    transition: none;
+  }
+}

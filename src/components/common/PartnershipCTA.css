@@ -1,0 +1,350 @@
+
+/* ========================================
+   REUSABLE PARTNERSHIP CTA
+======================================== */
+
+.partnership-cta {
+  position: relative;
+  width: 100%;
+  padding: 85px 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(
+    120deg,
+    var(--color-primary-dark),
+    var(--color-primary),
+    #1b3b5b
+  );
+}
+
+.partnership-cta-container {
+  position: relative;
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.partnership-cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ========================================
+   DECORATIVE ELEMENTS
+======================================== */
+
+.partnership-cta-decoration {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(197, 160, 82, 0.13);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.partnership-cta-decoration::before,
+.partnership-cta-decoration::after {
+  position: absolute;
+  border: 1px solid rgba(197, 160, 82, 0.09);
+  border-radius: 50%;
+  content: "";
+}
+
+.partnership-cta-decoration::before {
+  inset: 35px;
+}
+
+.partnership-cta-decoration::after {
+  inset: 70px;
+}
+
+.partnership-cta-decoration-left {
+  bottom: -230px;
+  left: -220px;
+}
+
+.partnership-cta-decoration-right {
+  top: -230px;
+  right: -220px;
+}
+
+/* ========================================
+   CTA ICON
+======================================== */
+
+.partnership-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
+  border: 1px solid rgba(197, 160, 82, 0.4);
+  border-radius: 50%;
+  background-color: rgba(197, 160, 82, 0.08);
+  color: var(--color-gold-light);
+}
+
+/* ========================================
+   CTA CONTENT
+======================================== */
+
+.partnership-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--color-gold-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+}
+
+.partnership-cta-eyebrow > span {
+  width: 25px;
+  height: 1px;
+  flex-shrink: 0;
+  background-color: var(--color-gold);
+}
+
+.partnership-cta-content h2 {
+  margin: 0 0 24px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.8vw, 56px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.partnership-cta-content h2 > span {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-gold-light);
+}
+
+.partnership-cta-content p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+
+.partnership-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.partnership-cta-primary,
+.partnership-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 15px 26px;
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Primary Button */
+
+.partnership-cta-primary {
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.partnership-cta-primary:hover {
+  border-color: var(--color-gold-light);
+  background-color: var(--color-gold-light);
+  color: var(--color-primary-dark);
+}
+
+/* Secondary Button */
+
+.partnership-cta-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.partnership-cta-secondary:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.partnership-cta-actions svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.partnership-cta-primary:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.partnership-cta-secondary:hover svg {
+  transform: translateX(4px);
+}
+
+.partnership-cta-actions a:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 5px;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .partnership-cta {
+    padding: 105px 0;
+  }
+
+  .partnership-cta-content h2 {
+    font-size: 64px;
+  }
+
+  .partnership-cta-content p {
+    font-size: 17px;
+  }
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .partnership-cta {
+    padding: 70px 0;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .partnership-cta {
+    padding: 65px 0;
+  }
+
+  .partnership-cta-container {
+    width: calc(100% - 64px);
+  }
+
+  .partnership-cta-content h2 {
+    font-size: 44px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .partnership-cta {
+    padding: 55px 0;
+  }
+
+  .partnership-cta-container {
+    width: calc(100% - 40px);
+  }
+
+  .partnership-cta-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .partnership-cta-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .partnership-cta-eyebrow {
+    gap: 7px;
+    margin-bottom: 16px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .partnership-cta-eyebrow > span {
+    width: 14px;
+  }
+
+  .partnership-cta-content h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .partnership-cta-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .partnership-cta-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .partnership-cta-primary,
+  .partnership-cta-secondary {
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px;
+    padding: 13px 20px;
+    font-size: 13px;
+  }
+
+  .partnership-cta-decoration {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  .partnership-cta-container {
+    width: calc(100% - 32px);
+  }
+
+  .partnership-cta-content h2 {
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partnership-cta-primary,
+  .partnership-cta-secondary,
+  .partnership-cta-actions svg {
+    transition: none;
+  }
+
+  .partnership-cta-primary:hover svg,
+  .partnership-cta-secondary:hover svg {
+    transform: none;
+  }
+}

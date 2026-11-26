@@ -1,0 +1,135 @@
+
+/* ========================================
+   REUSABLE BREADCRUMB NAVIGATION
+======================================== */
+
+.sge-breadcrumb {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.sge-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sge-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Navigation Link */
+
+.sge-breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sge-breadcrumb-link:hover {
+  color: var(--color-gold-light);
+}
+
+.sge-breadcrumb-link:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.sge-breadcrumb-link svg {
+  flex-shrink: 0;
+}
+
+/* Separator */
+
+.sge-breadcrumb-separator {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Current Page */
+
+.sge-breadcrumb-current {
+  color: var(--color-gold-light);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .sge-breadcrumb {
+    margin-bottom: 36px;
+  }
+
+  .sge-breadcrumb-item {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sge-breadcrumb {
+    margin-bottom: 25px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .sge-breadcrumb {
+    margin-bottom: 22px;
+  }
+
+  .sge-breadcrumb-list {
+    gap: 6px;
+  }
+
+  .sge-breadcrumb-item {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .sge-breadcrumb-link {
+    gap: 5px;
+  }
+
+  .sge-breadcrumb-link svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .sge-breadcrumb-separator {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Reduced Motion Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .sge-breadcrumb-link {
+    transition: none;
+  }
+}

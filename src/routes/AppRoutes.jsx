@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/layout/MainLayout";
 
 import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 export default function AppRoutes() {
@@ -14,25 +15,12 @@ export default function AppRoutes() {
         {/* Homepage */}
         <Route index element={<HomePage />} />
 
-        {/* Future dedicated pages */}
+        {/* About Us Page */}
+        <Route path="about" element={<AboutPage />} />
 
-        {/* About Us */}
+        {/* Future Dedicated Pages */}
 
-        {/* Product Catalogue */}
-
-        {/* Product Details */}
-
-        {/* Our Farmers */}
-
-        {/* Quality & Standards */}
-
-        {/* Global Markets */}
-
-        {/* Contact Us */}
-
-        {/* Privacy Policy & Terms */}
-
-        {/* Fallback Route */}
+        {/* 404 Page */}
         <Route path="*" element={<NotFoundPage />} />
 
       </Route>
