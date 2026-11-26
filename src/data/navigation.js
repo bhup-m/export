@@ -1,14 +1,22 @@
 
+/* ========================================
+   APPLICATION ROUTES
+======================================== */
+
 export const ROUTES = {
   HOME: "/",
   ABOUT: "/about",
-  PRODUCTS: "/#products",
+  PRODUCTS: "/products",
   FARMERS: "/#farmers",
   PROCESS: "/#process",
   QUALITY: "/#quality",
   MARKETS: "/#markets",
   CONTACT: "/#contact",
 };
+
+/* ========================================
+   NAVBAR LINKS
+======================================== */
 
 export const navLinks = [
   {
@@ -32,6 +40,10 @@ export const navLinks = [
     href: ROUTES.MARKETS,
   },
 ];
+
+/* ========================================
+   FOOTER LINKS
+======================================== */
 
 export const footerLinks = [
   {
@@ -60,6 +72,18 @@ export const footerLinks = [
   },
 ];
 
+/* ========================================
+   PRODUCT DETAILS URL HELPER
+======================================== */
+
+export function getProductDetailsUrl(productSlug) {
+  return `${ROUTES.PRODUCTS}/${encodeURIComponent(productSlug)}`;
+}
+
+/* ========================================
+   PRODUCT ENQUIRY URL HELPER
+======================================== */
+
 export function getProductEnquiryUrl(productSlug) {
   const [pathname, hash] = ROUTES.CONTACT.split("#");
 
@@ -67,5 +91,7 @@ export function getProductEnquiryUrl(productSlug) {
     product: productSlug,
   });
 
-  return `${pathname}?${params.toString()}${hash ? `#${hash}` : ""}`;
+  return `${pathname}?${params.toString()}${
+    hash ? `#${hash}` : ""
+  }`;
 }

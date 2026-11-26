@@ -1,0 +1,157 @@
+
+/* ========================================
+   ACTIVE CATALOGUE FILTERS
+======================================== */
+
+.catalogue-active-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-width: 0;
+  margin-top: 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.catalogue-active-filters-label {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 8px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.catalogue-active-filters-label svg {
+  color: #98752e;
+}
+
+/* ========================================
+   FILTER CHIPS
+======================================== */
+
+.catalogue-filter-chips {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+  gap: 10px;
+}
+
+.catalogue-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 8px 14px;
+  box-sizing: border-box;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 30px;
+  background-color: rgba(197, 160, 82, 0.1);
+  color: #806322;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.catalogue-filter-chip > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catalogue-filter-chip svg {
+  flex-shrink: 0;
+}
+
+.catalogue-filter-chip:hover {
+  border-color: var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-primary);
+}
+
+/* ========================================
+   CLEAR ALL BUTTON
+======================================== */
+
+.catalogue-clear-all {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 7px;
+  min-height: 36px;
+  padding: 8px 4px;
+  border: none;
+  background-color: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.catalogue-clear-all:hover {
+  color: #98752e;
+}
+
+.catalogue-filter-chip:focus-visible,
+.catalogue-clear-all:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .catalogue-active-filters {
+    gap: 12px;
+    margin-top: 15px;
+    padding: 14px 0;
+  }
+
+  .catalogue-active-filters-label {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .catalogue-filter-chips {
+    flex-basis: 100%;
+    gap: 8px;
+  }
+
+  .catalogue-filter-chip {
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .catalogue-clear-all {
+    min-height: 44px;
+    margin-left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalogue-filter-chip,
+  .catalogue-clear-all {
+    transition: none;
+  }
+}

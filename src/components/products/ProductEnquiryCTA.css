@@ -1,0 +1,555 @@
+
+/* ========================================
+   PRODUCT ENQUIRY SECTION
+======================================== */
+
+.product-enquiry-section {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--section-spacing) 0;
+  background: linear-gradient(
+    125deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 55%,
+    #1a3858 100%
+  );
+}
+
+.product-enquiry-container {
+  position: relative;
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   DECORATIVE BACKGROUND
+======================================== */
+
+.product-enquiry-decoration {
+  position: absolute;
+  z-index: -1;
+  width: 650px;
+  height: 650px;
+  border: 1px solid rgba(197, 160, 82, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.product-enquiry-decoration-top {
+  top: -380px;
+  right: -220px;
+  box-shadow:
+    0 0 0 45px rgba(197, 160, 82, 0.025),
+    0 0 0 90px rgba(197, 160, 82, 0.015);
+}
+
+.product-enquiry-decoration-bottom {
+  bottom: -450px;
+  left: -250px;
+}
+
+/* ========================================
+   MAIN LAYOUT
+======================================== */
+
+.product-enquiry-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+  align-items: center;
+  gap: 65px;
+}
+
+.product-enquiry-content {
+  min-width: 0;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.product-enquiry-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  line-height: 1.6;
+}
+
+.product-enquiry-eyebrow > span {
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background-color: var(--color-gold);
+}
+
+.product-enquiry-content h2 {
+  margin: 0 0 26px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 3.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.product-enquiry-content h2 > span {
+  display: block;
+  margin-top: 7px;
+  color: var(--color-gold-light);
+}
+
+.product-enquiry-description {
+  margin: 0 0 20px;
+  color: #dce4ee;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.product-enquiry-supporting-text {
+  margin: 0;
+  color: #b8c7d9;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   CTA ACTIONS
+======================================== */
+
+.product-enquiry-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.product-enquiry-section .product-enquiry-primary,
+.product-enquiry-section .product-enquiry-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  box-sizing: border-box;
+  padding: 15px 22px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.product-enquiry-actions svg {
+  flex-shrink: 0;
+}
+
+/* Primary Button */
+
+.product-enquiry-section .product-enquiry-primary {
+  border: 1px solid var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.product-enquiry-section .product-enquiry-primary:hover {
+  border-color: var(--color-gold-light);
+  background-color: var(--color-gold-light);
+  color: var(--color-primary-dark);
+}
+
+.product-enquiry-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.product-enquiry-primary:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* Secondary Button */
+
+.product-enquiry-section .product-enquiry-secondary {
+  border: 1px solid rgba(197, 160, 82, 0.65);
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.product-enquiry-secondary svg {
+  color: var(--color-gold-light);
+}
+
+.product-enquiry-section .product-enquiry-secondary:hover {
+  border-color: var(--color-gold);
+  background-color: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.product-enquiry-secondary:hover svg {
+  color: var(--color-primary-dark);
+}
+
+.product-enquiry-actions a:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 5px;
+}
+
+/* ========================================
+   BUSINESS SERVICES GRID
+======================================== */
+
+.product-enquiry-services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ========================================
+   BUSINESS SERVICE CARD
+======================================== */
+
+.product-enquiry-service-card {
+  position: relative;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.045);
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.product-enquiry-service-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  content: "";
+  transition: width 0.35s ease;
+}
+
+.product-enquiry-service-card:hover {
+  border-color: rgba(197, 160, 82, 0.55);
+  background-color: rgba(255, 255, 255, 0.075);
+}
+
+.product-enquiry-service-card:hover::before {
+  width: 100%;
+}
+
+/* Service Icon */
+
+.product-enquiry-service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(197, 160, 82, 0.25);
+  border-radius: 5px;
+  background-color: rgba(197, 160, 82, 0.09);
+  color: var(--color-gold-light);
+}
+
+.product-enquiry-service-card h3 {
+  margin: 0 0 12px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.product-enquiry-service-card p {
+  margin: 0;
+  color: #bdcad9;
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   CLOSING BRAND STATEMENT
+======================================== */
+
+.product-enquiry-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-gold-light);
+  text-align: center;
+}
+
+.product-enquiry-footer > svg {
+  flex-shrink: 0;
+}
+
+.product-enquiry-footer p {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.product-enquiry-footer-line {
+  width: 40px;
+  height: 1px;
+  flex-shrink: 0;
+  background-color: rgba(197, 160, 82, 0.5);
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .product-enquiry-layout {
+    gap: 90px;
+  }
+
+  .product-enquiry-content h2 {
+    font-size: 62px;
+  }
+
+  .product-enquiry-description {
+    font-size: 17px;
+  }
+
+  .product-enquiry-supporting-text {
+    font-size: 15px;
+  }
+
+  .product-enquiry-services {
+    gap: 24px;
+  }
+
+  .product-enquiry-service-card {
+    padding: 34px;
+  }
+
+  .product-enquiry-service-card h3 {
+    font-size: 24px;
+  }
+
+  .product-enquiry-service-card p {
+    font-size: 14px;
+  }
+
+  .product-enquiry-footer {
+    margin-top: 75px;
+  }
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .product-enquiry-layout {
+    gap: 40px;
+  }
+
+  .product-enquiry-services {
+    gap: 16px;
+  }
+
+  .product-enquiry-service-card {
+    padding: 22px;
+  }
+
+  .product-enquiry-service-card h3 {
+    font-size: 19px;
+  }
+
+  .product-enquiry-section .product-enquiry-primary,
+  .product-enquiry-section .product-enquiry-secondary {
+    padding: 13px 17px;
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-enquiry-container {
+    width: calc(100% - 64px);
+  }
+
+  .product-enquiry-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .product-enquiry-content {
+    max-width: 720px;
+  }
+
+  .product-enquiry-content h2 {
+    font-size: 46px;
+  }
+
+  .product-enquiry-service-card {
+    padding: 28px;
+  }
+
+  .product-enquiry-footer {
+    margin-top: 45px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .product-enquiry-container {
+    width: calc(100% - 40px);
+  }
+
+  .product-enquiry-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .product-enquiry-eyebrow {
+    gap: 9px;
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .product-enquiry-eyebrow > span {
+    width: 20px;
+  }
+
+  .product-enquiry-content h2 {
+    margin-bottom: 20px;
+    font-size: 34px;
+  }
+
+  .product-enquiry-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .product-enquiry-supporting-text {
+    font-size: 13px;
+  }
+
+  .product-enquiry-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .product-enquiry-services {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .product-enquiry-service-card {
+    padding: 24px;
+  }
+
+  .product-enquiry-service-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+  }
+
+  .product-enquiry-service-card h3 {
+    font-size: 21px;
+  }
+
+  .product-enquiry-footer {
+    gap: 10px;
+    margin-top: 35px;
+    padding-top: 24px;
+  }
+
+  .product-enquiry-footer p {
+    font-size: 14px;
+  }
+
+  .product-enquiry-footer-line {
+    width: 15px;
+  }
+
+  .product-enquiry-decoration {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .product-enquiry-container {
+    width: calc(100% - 32px);
+  }
+
+  .product-enquiry-content h2 {
+    font-size: 30px;
+  }
+
+  .product-enquiry-service-card {
+    padding: 20px;
+  }
+
+  .product-enquiry-footer-line {
+    display: none;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .product-enquiry-service-card,
+  .product-enquiry-service-card::before,
+  .product-enquiry-primary,
+  .product-enquiry-primary svg,
+  .product-enquiry-secondary {
+    transition: none;
+  }
+
+  .product-enquiry-primary:hover svg {
+    transform: none;
+  }
+}

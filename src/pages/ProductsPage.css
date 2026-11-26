@@ -1,0 +1,221 @@
+
+/* ========================================
+   PRODUCTS PAGE
+======================================== */
+
+.products-page {
+  width: 100%;
+  min-width: 0;
+  background-color: var(--color-white);
+}
+
+/* ========================================
+   PRODUCT CATALOGUE SECTION
+======================================== */
+
+.products-page-catalogue {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-off-white);
+}
+
+.products-page-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   PRODUCT CATALOGUE HEADING
+======================================== */
+
+.products-page-heading {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.products-page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #98752e;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.5;
+}
+
+.products-page-eyebrow > span {
+  width: 28px;
+  height: 1px;
+  flex-shrink: 0;
+  background-color: var(--color-gold);
+}
+
+.products-page-heading h2 {
+  margin: 0 0 22px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.products-page-heading h2 > span {
+  display: block;
+  margin-top: 6px;
+  color: #98752e;
+}
+
+.products-page-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   RESULTS SUMMARY & SORTING
+======================================== */
+
+.catalogue-results-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 26px;
+}
+
+.catalogue-results-summary p {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.catalogue-results-summary strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .products-page-heading {
+    margin-bottom: 60px;
+  }
+
+  .products-page-heading h2 {
+    font-size: 60px;
+  }
+
+  .products-page-heading p {
+    font-size: 17px;
+  }
+
+  .catalogue-results-summary {
+    margin: 36px 0 30px;
+  }
+
+  .catalogue-results-summary p {
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .products-page-heading {
+    margin-bottom: 40px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .products-page-container {
+    width: calc(100% - 64px);
+  }
+
+  .products-page-heading {
+    margin-bottom: 35px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .products-page-container {
+    width: calc(100% - 40px);
+  }
+
+  .products-page-heading {
+    margin-bottom: 30px;
+  }
+
+  .products-page-eyebrow {
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .products-page-eyebrow > span {
+    width: 18px;
+  }
+
+  .products-page-heading h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .products-page-heading p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .catalogue-results-summary {
+    margin: 24px 0 20px;
+    gap: 14px;
+  }
+
+  .catalogue-results-summary p {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .products-page-container {
+    width: calc(100% - 32px);
+  }
+
+  .products-page-heading h2 {
+    font-size: 30px;
+  }
+
+  .catalogue-results-summary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
