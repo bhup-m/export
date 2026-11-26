@@ -15,6 +15,9 @@ import {
 import farmerMainImage from "../../assets/images/farmers/farmer-main.jpg";
 
 import "./OurFarmers.css";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../data/navigation";
+
 
 export default function OurFarmers() {
   const reduceMotion = useReducedMotion();
@@ -247,13 +250,13 @@ export default function OurFarmers() {
             </p>
           </div>
 
-          <a
-            href="#contact"
+          <Link
+            to={ROUTES.FARMERS}
             className="farmers-cta-button"
           >
-            Partner With Us
+            Explore Our Sourcing Network
             <ArrowUpRight size={20} />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

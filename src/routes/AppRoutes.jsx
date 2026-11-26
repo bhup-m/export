@@ -1,5 +1,8 @@
 
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
 import MainLayout from "../components/layout/MainLayout";
 
@@ -7,6 +10,7 @@ import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
 import ProductsPage from "../pages/ProductsPage";
 import ProductDetailsPage from "../pages/ProductDetailsPage";
+import FarmersPage from "../pages/FarmersPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
 export default function AppRoutes() {
@@ -14,13 +18,22 @@ export default function AppRoutes() {
     <Routes>
       <Route element={<MainLayout />}>
         {/* Homepage */}
-        <Route index element={<HomePage />} />
+        <Route
+          index
+          element={<HomePage />}
+        />
 
         {/* About Us */}
-        <Route path="about" element={<AboutPage />} />
+        <Route
+          path="about"
+          element={<AboutPage />}
+        />
 
         {/* Product Catalogue */}
-        <Route path="products" element={<ProductsPage />} />
+        <Route
+          path="products"
+          element={<ProductsPage />}
+        />
 
         {/* Dynamic Product Details */}
         <Route
@@ -28,8 +41,17 @@ export default function AppRoutes() {
           element={<ProductDetailsPage />}
         />
 
-        {/* Global 404 */}
-        <Route path="*" element={<NotFoundPage />} />
+        {/* Our Farmers & Sourcing */}
+        <Route
+          path="farmers"
+          element={<FarmersPage />}
+        />
+
+        {/* Page Not Found */}
+        <Route
+          path="*"
+          element={<NotFoundPage />}
+        />
       </Route>
     </Routes>
   );
