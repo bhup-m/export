@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+
 import {
   motion,
   AnimatePresence,
@@ -7,13 +8,16 @@ import {
 } from "motion/react";
 
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import ProductCard from "../common/ProductCard";
 
 import {
-  products,
+  getFeaturedProducts,
   productCategories,
 } from "../../data/products";
+
+import { ROUTES } from "../../data/navigation";
 
 import "./FeaturedProducts.css";
 
@@ -23,9 +27,7 @@ export default function FeaturedProducts() {
 
   const reduceMotion = useReducedMotion();
 
-  const featuredProducts = products.filter(
-    (product) => product.featured
-  );
+  const featuredProducts = getFeaturedProducts();
 
   const filteredProducts = featuredProducts.filter(
     (product) =>
@@ -41,6 +43,7 @@ export default function FeaturedProducts() {
       <div className="featured-products-container">
 
         {/* Section Heading */}
+
         <motion.div
           className="featured-products-heading"
           initial={{
@@ -75,6 +78,7 @@ export default function FeaturedProducts() {
         </motion.div>
 
         {/* Category Filters */}
+
         <div
           className="product-filters"
           role="group"
@@ -96,12 +100,13 @@ export default function FeaturedProducts() {
                   : ""
               }`}
             >
-              {category.name}
+              {category.label}
             </button>
           ))}
         </div>
 
         {/* Product Grid */}
+
         <motion.div
           layout={!reduceMotion}
           className="featured-products-grid"
@@ -135,6 +140,7 @@ export default function FeaturedProducts() {
         </motion.div>
 
         {/* Empty State */}
+
         {filteredProducts.length === 0 && (
           <p
             className="products-empty-state"
@@ -144,21 +150,28 @@ export default function FeaturedProducts() {
           </p>
         )}
 
-        {/* Section CTA */}
+        {/* Product Catalogue CTA */}
+
         <div className="featured-products-cta">
           <p>
-            Looking for specific products, bulk quantities
-            or customised packaging requirements?
+            Discover our complete product portfolio
+            and explore sourcing opportunities for
+            your business.
           </p>
 
-          <a
-            href="#contact"
+          <Link
+            to={ROUTES.PRODUCTS}
             className="products-catalogue-button"
           >
-            Request Product Catalogue
-            <ArrowUpRight size={19} />
-          </a>
+            Explore All Products
+
+            <ArrowUpRight
+              size={19}
+              aria-hidden="true"
+            />
+          </Link>
         </div>
+
       </div>
     </section>
   );

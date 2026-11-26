@@ -1,0 +1,148 @@
+
+/* ========================================
+   PRODUCT SORTING
+======================================== */
+
+.catalogue-sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.catalogue-sort-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.catalogue-sort-label svg {
+  color: #98752e;
+}
+
+/* ========================================
+   SELECT WRAPPER
+======================================== */
+
+.catalogue-sort-select-wrapper {
+  position: relative;
+  min-width: 190px;
+}
+
+/* ========================================
+   SORT SELECT
+======================================== */
+
+.catalogue-sort-select {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 11px 38px 11px 15px;
+  border: 1px solid #dce0e5;
+  border-radius: 4px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.catalogue-sort-select:hover {
+  border-color: var(--color-gold);
+}
+
+.catalogue-sort-select:focus-visible {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(197, 160, 82, 0.15);
+}
+
+.catalogue-sort-select option {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* ========================================
+   DROPDOWN ICON
+======================================== */
+
+.catalogue-sort-chevron {
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  color: #98752e;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .catalogue-sort-label {
+    font-size: 14px;
+  }
+
+  .catalogue-sort-select-wrapper {
+    min-width: 210px;
+  }
+
+  .catalogue-sort-select {
+    min-height: 48px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .catalogue-sort {
+    gap: 10px;
+  }
+
+  .catalogue-sort-label {
+    font-size: 12px;
+  }
+
+  .catalogue-sort-select-wrapper {
+    min-width: 165px;
+  }
+
+  .catalogue-sort-select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .catalogue-sort {
+    width: 100%;
+  }
+
+  .catalogue-sort-select-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalogue-sort-select {
+    transition: none;
+  }
+}
