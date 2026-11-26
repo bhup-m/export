@@ -12,6 +12,8 @@ import { qualityStandards } from "../../data/qualityStandards";
 import qualityImage from "../../assets/images/quality/quality-inspection.jpg";
 
 import "./QualityStandards.css";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../data/navigation";
 
 export default function QualityStandards() {
   const reduceMotion = useReducedMotion();
@@ -171,13 +173,13 @@ export default function QualityStandards() {
             </div>
           </div>
 
-          <a
-            href="#contact"
+          <Link
+             to={ROUTES.QUALITY}
             className="quality-cta"
           >
-            Discuss Specifications
+            Explore Our Quality Standards
             <ArrowUpRight size={18} />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
