@@ -1,0 +1,627 @@
+
+/* ========================================
+   REGIONAL MARKET OPPORTUNITIES
+======================================== */
+
+.regional-opportunities {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background: var(--color-off-white);
+}
+
+.regional-opportunities-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.regional-opportunities-heading {
+  max-width: 780px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.regional-opportunities-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #98752e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.regional-opportunities-eyebrow > span {
+  width: 30px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.regional-opportunities-heading h2 {
+  margin-bottom: 22px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(35px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.regional-opportunities-heading h2 > span {
+  display: block;
+  margin-top: 8px;
+  color: #98752e;
+}
+
+.regional-opportunities-heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   REGIONAL CARD GRID
+======================================== */
+
+.regional-opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 30px;
+}
+
+.regional-opportunity-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 39, 71, 0.1);
+  border-radius: 13px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.regional-opportunity-card:hover {
+  border-color: rgba(197, 160, 82, 0.5);
+  box-shadow: 0 15px 40px rgba(16, 39, 71, 0.12);
+}
+
+/* ========================================
+   REGIONAL IMAGE
+======================================== */
+
+.regional-opportunity-image {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+
+.regional-opportunity-image > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.regional-opportunity-card:hover
+.regional-opportunity-image > img {
+  transform: scale(1.05);
+}
+
+.regional-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 27, 50, 0.2),
+    transparent 45%,
+    rgba(9, 27, 50, 0.65)
+  );
+  pointer-events: none;
+}
+
+.regional-image-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  background: rgba(9, 27, 50, 0.9);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.regional-image-label svg {
+  color: var(--color-gold-light);
+}
+
+.regional-image-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  border: 1px solid rgba(197, 160, 82, 0.6);
+  border-radius: 10px;
+  background: rgba(9, 27, 50, 0.9);
+  color: var(--color-gold-light);
+}
+
+/* ========================================
+   REGIONAL CONTENT
+======================================== */
+
+.regional-opportunity-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 30px;
+}
+
+.regional-opportunity-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #98752e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.regional-opportunity-eyebrow
+> span:first-child {
+  font-size: 15px;
+}
+
+.regional-opportunity-eyebrow
+> span:nth-child(2) {
+  width: 22px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.regional-opportunity-content > h3 {
+  margin-bottom: 8px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.regional-opportunity-subtitle {
+  margin-bottom: 15px;
+  color: #98752e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.regional-opportunity-description {
+  margin-bottom: 25px;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   TARGET COUNTRIES
+======================================== */
+
+.regional-target-countries {
+  margin-bottom: 22px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(16, 39, 71, 0.08);
+  border-bottom: 1px solid rgba(16, 39, 71, 0.08);
+}
+
+.regional-target-countries h4,
+.regional-buyer-segments h4 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: var(--color-heading);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.regional-target-countries h4 svg,
+.regional-buyer-segments h4 svg {
+  flex-shrink: 0;
+  color: #98752e;
+}
+
+.regional-country-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.regional-country-tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(197, 160, 82, 0.25);
+  border-radius: 5px;
+  background: rgba(197, 160, 82, 0.07);
+  color: var(--color-heading);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ========================================
+   BUYER SEGMENTS
+======================================== */
+
+.regional-buyer-segments {
+  margin-bottom: 25px;
+}
+
+.regional-buyer-segments ul {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.regional-buyer-segments li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.regional-buyer-segments li > span {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+/* ========================================
+   MARKET CONSIDERATIONS
+======================================== */
+
+.regional-considerations {
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 39, 71, 0.1);
+  border-radius: 7px;
+  background: var(--color-off-white);
+}
+
+.regional-considerations-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  min-height: 48px;
+  padding: 15px;
+  border: 0;
+  background: transparent;
+  color: var(--color-heading);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.regional-considerations-toggle > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.regional-considerations-toggle svg {
+  flex-shrink: 0;
+  color: #98752e;
+  transition: transform 0.3s ease;
+}
+
+.regional-considerations-toggle
+> svg.is-expanded {
+  transform: rotate(180deg);
+}
+
+.regional-considerations-content {
+  padding: 0 18px 18px;
+}
+
+.regional-considerations-content[hidden] {
+  display: none;
+}
+
+.regional-considerations-content ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.7;
+  list-style: disc;
+}
+
+.regional-considerations-content li::marker {
+  color: #98752e;
+}
+
+/* ========================================
+   REGIONAL CTA
+======================================== */
+
+.regional-opportunity-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 14px 18px;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.regional-opportunity-cta svg {
+  flex-shrink: 0;
+  color: var(--color-gold-light);
+}
+
+.regional-opportunity-cta:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.regional-opportunity-cta:hover svg {
+  color: var(--color-primary-dark);
+}
+
+.regional-opportunity-cta:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.regional-considerations-toggle:focus-visible {
+  outline: 2px solid #98752e;
+  outline-offset: -3px;
+}
+
+/* ========================================
+   DISCLAIMER
+======================================== */
+
+.regional-opportunities-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 5px;
+  background: var(--color-white);
+}
+
+.regional-opportunities-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #98752e;
+}
+
+.regional-opportunities-note p {
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media screen and (min-width: 1600px) {
+  .regional-opportunities-grid {
+    gap: 35px;
+  }
+
+  .regional-opportunity-image {
+    height: 330px;
+  }
+
+  .regional-opportunity-content {
+    padding: 35px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .regional-opportunities-container {
+    width: calc(100% - 64px);
+  }
+
+  .regional-opportunities-grid {
+    gap: 22px;
+  }
+
+  .regional-opportunity-image {
+    height: 230px;
+  }
+
+  .regional-opportunity-content {
+    padding: 23px;
+  }
+
+  .regional-opportunity-content > h3 {
+    font-size: 30px;
+  }
+
+  .regional-opportunity-description {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .regional-opportunities-container {
+    width: calc(100% - 40px);
+  }
+
+  .regional-opportunities-heading {
+    margin-bottom: 30px;
+  }
+
+  .regional-opportunities-eyebrow {
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .regional-opportunities-eyebrow > span {
+    width: 15px;
+  }
+
+  .regional-opportunities-heading h2 {
+    font-size: 35px;
+  }
+
+  .regional-opportunities-heading p {
+    font-size: 13px;
+  }
+
+  .regional-opportunities-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .regional-opportunity-image {
+    height: 230px;
+  }
+
+  .regional-image-label {
+    top: 15px;
+    left: 15px;
+    font-size: 10px;
+  }
+
+  .regional-image-icon {
+    right: 15px;
+    bottom: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .regional-image-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .regional-opportunity-content {
+    padding: 22px;
+  }
+
+  .regional-opportunities-note {
+    margin-top: 25px;
+    padding: 15px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .regional-opportunities-container {
+    width: calc(100% - 32px);
+  }
+
+  .regional-opportunities-heading h2 {
+    font-size: 30px;
+  }
+
+  .regional-opportunities-eyebrow {
+    font-size: 9px;
+  }
+
+  .regional-opportunity-image {
+    height: 200px;
+  }
+
+  .regional-opportunity-content {
+    padding: 18px;
+  }
+
+  .regional-opportunity-content > h3 {
+    font-size: 28px;
+  }
+
+  .regional-opportunity-cta {
+    padding: 13px;
+    font-size: 12px;
+  }
+
+  .regional-country-tags li {
+    font-size: 10px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .regional-opportunity-card,
+  .regional-opportunity-image > img,
+  .regional-opportunity-cta,
+  .regional-considerations-toggle svg {
+    transition: none;
+  }
+
+  .regional-opportunity-card:hover
+  .regional-opportunity-image > img {
+    transform: none;
+  }
+}
