@@ -333,6 +333,7 @@ export default function ProductsPage() {
 
           <ProductGrid
             products={sortedProducts}
+            detailsEnabled={true}
           />
 
           {/* Product Empty State */}

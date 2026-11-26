@@ -13,12 +13,13 @@ import {
 import { Link } from "react-router-dom";
 
 import { contactDetails } from "../../data/contactDetails";
-import { products } from "../../data/products";
+import { getActiveProducts } from "../../data/products";
 
 import {
   footerLinks,
   ROUTES,
   getProductEnquiryUrl,
+  getProductDetailsUrl
 } from "../../data/navigation";
 
 import "./Footer.css";
@@ -196,11 +197,9 @@ export default function Footer() {
             <h3>Our Products</h3>
 
             <ul className="footer-links">
-              {products.slice(0, 6).map((product) => (
+              {getActiveProducts().slice(0, 6).map((product) => (
                 <li key={product.id}>
-                  <Link
-                    to={getProductEnquiryUrl(product.slug)}
-                  >
+                  <Link to={getProductDetailsUrl(product.slug)}>
                     {product.name}
                   </Link>
                 </li>

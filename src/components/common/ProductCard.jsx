@@ -1,63 +1,103 @@
 
-import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getProductEnquiryUrl } from "../../data/navigation";
+
+import {
+  ArrowUpRight,
+  ArrowRight,
+  MapPin,
+} from "lucide-react";
+
+import {
+  getProductDetailsUrl,
+  getProductEnquiryUrl,
+} from "../../data/navigation";
+
 import "./ProductCard.css";
 
 export default function ProductCard({ product }) {
+  const detailsUrl = getProductDetailsUrl(
+    product.slug
+  );
 
-    return (
-        <article className="product-card">
+  const enquiryUrl = getProductEnquiryUrl(
+    product.slug
+  );
 
-            {/* Product Image */}
-            <div className="product-card-image-wrapper">
-                <img
-                    src={product.image}
-                    alt={product.name}
-                    className="product-card-image"
-                    loading="lazy"
-                    decoding="async"
-                    width={800}
-                    height={600}
-                />
+  return (
+    <article className="product-card">
+      {/* Product Image */}
+      <div className="product-card-image">
+        <Link
+          to={detailsUrl}
+          className="product-card-image-link"
+          aria-label={`View details for ${product.name}`}
+        >
+          <img
+            src={product.image}
+            alt={product.name}
+            loading="lazy"
+            decoding="async"
+          />
+        </Link>
 
-                <span className="product-origin">
-                    <MapPin size={13} strokeWidth={1.8} />
-                    {product.origin}
-                </span>
-            </div>
+        <div className="product-origin-badge">
+          <MapPin
+            size={14}
+            strokeWidth={1.8}
+            aria-hidden="true"
+          />
 
-            {/* Product Information */}
-            <div className="product-card-content">
-                <span className="product-category">
-                    {product.categoryLabel}
-                </span>
+          {product.origin}
+        </div>
+      </div>
 
-                <h3 className="product-name">
-                    {product.name}
-                </h3>
+      {/* Product Content */}
+      <div className="product-card-content">
+        <span className="product-card-category">
+          {product.categoryLabel}
+        </span>
 
-                <p className="product-description">
-                    {product.description}
-                </p>
+        <h3 className="product-card-title">
+          <Link to={detailsUrl}>
+            {product.name}
+          </Link>
+        </h3>
 
-                {/* Enquiry Button */}
-                <div className="product-card-footer">
+        <p className="product-card-description">
+          {product.description}
+        </p>
 
-                    <Link
-                        to={getProductEnquiryUrl(product.slug)}
-                        className="product-enquiry-link"
-                        aria-label={`Enquire about ${product.name}`}
-                    >
-                        Enquire Now
+        {/* Product Actions */}
+        <div className="product-card-actions">
+          <Link
+            to={detailsUrl}
+            className="product-details-link"
+            aria-label={`View details for ${product.name}`}
+          >
+            View Details
 
-                        <span className="product-arrow">
-                            <ArrowUpRight size={19} strokeWidth={1.8} />
-                        </span>
-                    </Link>
+            <ArrowRight
+              size={17}
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+          </Link>
 
-                </div>
-            </div>
-        </article>
-    );
+          <Link
+            to={enquiryUrl}
+            className="product-enquiry-link"
+            aria-label={`Enquire about ${product.name}`}
+          >
+            Enquire Now
+
+            <ArrowUpRight
+              size={17}
+              strokeWidth={1.8}
+              aria-hidden="true"
+            />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
 }
