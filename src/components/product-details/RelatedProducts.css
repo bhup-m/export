@@ -1,0 +1,326 @@
+
+.related-products {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background: var(--color-off-white);
+  box-sizing: border-box;
+}
+
+.related-products-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+/* ========================================
+   Section Heading
+======================================== */
+
+.related-products-heading {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.related-products-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #806322;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.related-products-eyebrow span {
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.related-products-heading h2 {
+  margin-bottom: 22px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.related-products-heading h2 span {
+  display: block;
+  margin-top: 5px;
+  color: #98752e;
+}
+
+.related-products-heading p {
+  max-width: 700px;
+  margin-inline: auto;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   Product Summary
+======================================== */
+
+.related-products-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e1e5ea;
+}
+
+.related-products-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.related-products-category svg {
+  flex-shrink: 0;
+  color: #98752e;
+}
+
+.related-products-count {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ========================================
+   Explore Products CTA
+======================================== */
+
+.related-products-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.related-products-footer p {
+  max-width: 600px;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.related-products-cta {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 16px 28px;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: var(--transition);
+}
+
+.related-products-cta svg {
+  flex-shrink: 0;
+  color: var(--color-gold-light);
+}
+
+.related-products-cta:hover {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+.related-products-cta:hover svg {
+  color: var(--color-primary-dark);
+}
+
+.related-products-cta:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 5px;
+}
+
+/* ========================================
+   Large Desktop
+======================================== */
+
+@media screen and (min-width: 1600px) {
+  .related-products-heading {
+    margin-bottom: 60px;
+  }
+
+  .related-products-heading h2 {
+    font-size: 60px;
+  }
+
+  .related-products-heading p {
+    font-size: 17px;
+  }
+
+  .related-products-summary {
+    margin-bottom: 30px;
+  }
+
+  .related-products-footer {
+    margin-top: 60px;
+  }
+
+  .related-products-footer p {
+    font-size: 15px;
+  }
+
+  .related-products-cta {
+    min-height: 60px;
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+   Laptop
+======================================== */
+
+@media screen and (min-width: 1025px)
+  and (max-width: 1359px) {
+
+  .related-products-heading {
+    margin-bottom: 40px;
+  }
+
+  .related-products-footer {
+    margin-top: 40px;
+  }
+}
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .related-products-container {
+    width: calc(100% - 64px);
+  }
+
+  .related-products-heading {
+    margin-bottom: 36px;
+  }
+
+  .related-products-heading p {
+    font-size: 15px;
+  }
+
+  .related-products-footer {
+    margin-top: 36px;
+  }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .related-products-container {
+    width: calc(100% - 40px);
+  }
+
+  .related-products-heading {
+    margin-bottom: 30px;
+  }
+
+  .related-products-eyebrow {
+    gap: 9px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .related-products-eyebrow span {
+    width: 22px;
+  }
+
+  .related-products-heading h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .related-products-heading p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .related-products-summary {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .related-products-category {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .related-products-count {
+    font-size: 12px;
+  }
+
+  .related-products-footer {
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .related-products-footer p {
+    font-size: 13px;
+  }
+
+  .related-products-cta {
+    width: 100%;
+    min-height: 52px;
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .related-products-container {
+    width: calc(100% - 32px);
+  }
+
+  .related-products-heading h2 {
+    font-size: 30px;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .related-products-cta {
+    transition: none;
+  }
+
+  .related-products-cta:hover {
+    transform: none;
+  }
+}

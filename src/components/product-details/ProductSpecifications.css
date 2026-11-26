@@ -1,0 +1,512 @@
+
+.product-specifications {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background: var(--color-off-white);
+  box-sizing: border-box;
+}
+
+.product-specifications-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+/* ========================================
+   Section Heading
+======================================== */
+
+.product-specifications-heading {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.product-specifications-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #806322;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+.product-specifications-eyebrow span {
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.product-specifications-heading h2 {
+  margin-bottom: 22px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.product-specifications-heading h2 span {
+  display: block;
+  margin-top: 5px;
+  color: #98752e;
+}
+
+.product-specifications-heading p {
+  max-width: 700px;
+  margin-inline: auto;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   Specifications Card
+======================================== */
+
+.product-specifications-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e1e5ea;
+  border-radius: 7px;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+}
+
+/* ========================================
+   Card Header
+======================================== */
+
+.product-specifications-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 36px;
+  background: linear-gradient(
+    115deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.product-specifications-header-icon {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(197, 160, 82, 0.35);
+  border-radius: 5px;
+  background: rgba(197, 160, 82, 0.1);
+  color: var(--color-gold-light);
+}
+
+.product-specifications-card-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-specifications-card-heading h3 {
+  margin-bottom: 6px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.product-specifications-card-heading p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.product-specifications-count {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid rgba(197, 160, 82, 0.35);
+  border-radius: 4px;
+  background: rgba(197, 160, 82, 0.08);
+  color: var(--color-gold-light);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========================================
+   Specifications Table
+======================================== */
+
+.product-specifications-table-wrapper {
+  width: 100%;
+}
+
+.product-specifications-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+}
+
+.product-specifications-table thead {
+  background: #edf0f4;
+}
+
+.product-specifications-table thead th {
+  padding: 20px 36px;
+  border-bottom: 1px solid #dce1e7;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.product-specifications-table thead th:first-child {
+  width: 38%;
+}
+
+.product-specifications-table tbody tr {
+  border-bottom: 1px solid #e7e9ed;
+  background: var(--color-white);
+  transition: background-color 0.2s ease;
+}
+
+.product-specifications-table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.product-specifications-table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.product-specifications-table tbody th,
+.product-specifications-table tbody td {
+  padding: 23px 36px;
+  font-size: 15px;
+  line-height: 1.75;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+
+.product-specifications-table tbody th {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.product-specifications-table tbody td {
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.product-specifications-table th + th,
+.product-specifications-table th + td {
+  border-left: 1px solid #e7e9ed;
+}
+
+@media (hover: hover) {
+  .product-specifications-table tbody tr:hover {
+    background: #f8f3e8;
+  }
+}
+
+/* ========================================
+   Specification Note
+======================================== */
+
+.product-specifications-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 24px 28px;
+  border: 1px solid rgba(197, 160, 82, 0.25);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 5px;
+  background: rgba(197, 160, 82, 0.08);
+}
+
+.product-specifications-note-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(197, 160, 82, 0.13);
+  color: #98752e;
+}
+
+.product-specifications-note-content {
+  min-width: 0;
+}
+
+.product-specifications-note-content h3 {
+  margin-bottom: 7px;
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.product-specifications-note-content p {
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   Large Desktop
+======================================== */
+
+@media screen and (min-width: 1600px) {
+  .product-specifications-heading {
+    margin-bottom: 60px;
+  }
+
+  .product-specifications-heading h2 {
+    font-size: 60px;
+  }
+
+  .product-specifications-heading p {
+    font-size: 17px;
+  }
+
+  .product-specifications-card-header {
+    padding: 36px 44px;
+  }
+
+  .product-specifications-card-heading h3 {
+    font-size: 32px;
+  }
+
+  .product-specifications-table thead th {
+    padding: 23px 44px;
+  }
+
+  .product-specifications-table tbody th,
+  .product-specifications-table tbody td {
+    padding: 26px 44px;
+    font-size: 16px;
+  }
+
+  .product-specifications-note {
+    padding: 28px 32px;
+  }
+}
+
+/* ========================================
+   Laptop
+======================================== */
+
+@media screen and (min-width: 1025px)
+  and (max-width: 1359px) {
+
+  .product-specifications-heading {
+    margin-bottom: 40px;
+  }
+
+  .product-specifications-card-header {
+    padding: 26px 30px;
+  }
+
+  .product-specifications-table thead th,
+  .product-specifications-table tbody th,
+  .product-specifications-table tbody td {
+    padding-inline: 30px;
+  }
+}
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .product-specifications-container {
+    width: calc(100% - 64px);
+  }
+
+  .product-specifications-heading {
+    margin-bottom: 36px;
+  }
+
+  .product-specifications-heading p {
+    font-size: 15px;
+  }
+
+  .product-specifications-card-header {
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .product-specifications-header-icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .product-specifications-card-heading h3 {
+    font-size: 25px;
+  }
+
+  .product-specifications-table thead th {
+    padding: 17px 24px;
+  }
+
+  .product-specifications-table tbody th,
+  .product-specifications-table tbody td {
+    padding: 20px 24px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .product-specifications-container {
+    width: calc(100% - 40px);
+  }
+
+  .product-specifications-heading {
+    margin-bottom: 30px;
+  }
+
+  .product-specifications-eyebrow {
+    gap: 9px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .product-specifications-eyebrow span {
+    width: 22px;
+  }
+
+  .product-specifications-heading h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .product-specifications-heading p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .product-specifications-card-header {
+    gap: 12px;
+    padding: 20px 16px;
+  }
+
+  .product-specifications-header-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .product-specifications-header-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .product-specifications-card-heading h3 {
+    font-size: 23px;
+  }
+
+  .product-specifications-card-heading p {
+    font-size: 11px;
+  }
+
+  .product-specifications-count {
+    display: none;
+  }
+
+  .product-specifications-table thead th {
+    padding: 14px 12px;
+    font-size: 11px;
+  }
+
+  .product-specifications-table thead th:first-child {
+    width: 43%;
+  }
+
+  .product-specifications-table tbody th,
+  .product-specifications-table tbody td {
+    padding: 16px 12px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .product-specifications-note {
+    gap: 12px;
+    margin-top: 20px;
+    padding: 17px 14px;
+  }
+
+  .product-specifications-note-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .product-specifications-note-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .product-specifications-note-content h3 {
+    font-size: 14px;
+  }
+
+  .product-specifications-note-content p {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .product-specifications-container {
+    width: calc(100% - 32px);
+  }
+
+  .product-specifications-heading h2 {
+    font-size: 30px;
+  }
+
+  .product-specifications-card-heading h3 {
+    font-size: 21px;
+  }
+
+  .product-specifications-table thead th {
+    padding-inline: 10px;
+    font-size: 10px;
+  }
+
+  .product-specifications-table tbody th,
+  .product-specifications-table tbody td {
+    padding: 14px 10px;
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .product-specifications-table tbody tr {
+    transition: none;
+  }
+}
