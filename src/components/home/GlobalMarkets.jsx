@@ -13,6 +13,9 @@ import {
   Check,
 } from "lucide-react";
 
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../data/navigation";
+
 import WorldMap from "../common/WorldMap";
 
 import { globalMarkets } from "../../data/globalMarkets";
@@ -226,13 +229,13 @@ export default function GlobalMarkets() {
             trading partners.
           </p>
 
-          <a
-            href="#contact"
+          <Link
+            to={ROUTES.MARKETS}
             className="global-markets-cta"
           >
-            Become Our Global Partner
+            Explore Our Global Markets
             <ArrowUpRight size={19} />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

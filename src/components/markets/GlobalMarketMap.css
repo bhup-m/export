@@ -1,0 +1,767 @@
+
+/* ========================================
+   GLOBAL MARKET MAP
+======================================== */
+
+.global-market-map {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--section-spacing) 0;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark),
+    var(--color-primary)
+  );
+}
+
+.global-map-container {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.global-map-decoration {
+  position: absolute;
+  border: 1px solid rgba(197, 160, 82, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.global-map-decoration-one {
+  top: -300px;
+  right: -250px;
+  width: 750px;
+  height: 750px;
+}
+
+.global-map-decoration-two {
+  bottom: -350px;
+  left: -300px;
+  width: 800px;
+  height: 800px;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.global-map-heading {
+  max-width: 780px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.global-map-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: var(--color-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.global-map-eyebrow > span {
+  width: 30px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.global-map-heading h2 {
+  margin-bottom: 22px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(35px, 4vw, 54px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.global-map-heading h2 > span {
+  display: block;
+  margin-top: 8px;
+  color: var(--color-gold-light);
+}
+
+.global-map-heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   REGIONAL FILTERS
+======================================== */
+
+.global-map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.global-map-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 45px;
+  padding: 11px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.global-map-filter > svg {
+  color: var(--color-gold-light);
+}
+
+.global-map-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+}
+
+.global-map-filter:hover {
+  border-color: var(--color-gold);
+  background: rgba(197, 160, 82, 0.12);
+}
+
+.global-map-filter.is-active {
+  border-color: var(--color-gold);
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.global-map-filter.is-active > svg {
+  color: var(--color-primary-dark);
+}
+
+.global-map-filter.is-active
+.global-map-filter-count {
+  background: rgba(9, 27, 50, 0.12);
+}
+
+/* ========================================
+   WORLD MAP
+======================================== */
+
+.global-map-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 14px;
+  background: rgba(9, 27, 50, 0.35);
+}
+
+.global-map-visual svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========================================
+   MAP LEGEND
+======================================== */
+
+.global-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 22px;
+  margin-bottom: 45px;
+}
+
+.global-map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.global-map-origin-dot,
+.global-map-country-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.global-map-origin-dot {
+  background: var(--color-gold);
+  box-shadow: 0 0 0 4px
+    rgba(197, 160, 82, 0.15);
+}
+
+.global-map-country-dot {
+  border: 1px solid var(--color-gold);
+  background: var(--color-white);
+}
+
+.global-map-route-line {
+  display: inline-block;
+  width: 25px;
+  border-top: 2px dashed var(--color-gold);
+}
+
+/* ========================================
+   MARKET SUMMARY
+======================================== */
+
+.global-map-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 25px;
+  padding: 28px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.global-map-summary-text > span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.global-map-summary-text h3 {
+  margin-bottom: 10px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(23px, 2.5vw, 30px);
+  font-weight: 600;
+}
+
+.global-map-summary-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.global-map-summary-stats {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 35px;
+}
+
+.global-map-summary-stats > div {
+  min-width: 95px;
+  text-align: center;
+}
+
+.global-map-summary-stats strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-gold-light);
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.global-map-summary-stats span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+/* ========================================
+   REGION CARDS
+======================================== */
+
+.global-map-region-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.global-map-region-grid.single-region {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.global-map-region-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.global-map-region-card:hover {
+  border-color: rgba(197, 160, 82, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.global-map-region-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+
+.global-map-region-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 8px;
+  background: rgba(197, 160, 82, 0.08);
+  color: var(--color-gold-light);
+}
+
+.global-map-region-header h4 {
+  margin-bottom: 5px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.global-map-region-header p {
+  color: var(--color-gold-light);
+  font-size: 11px;
+}
+
+/* ========================================
+   COUNTRY LIST
+======================================== */
+
+.global-map-country-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.global-map-country-list li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 11px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  background: rgba(9, 27, 50, 0.35);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.global-map-country-list li > svg {
+  flex-shrink: 0;
+  color: var(--color-gold-light);
+}
+
+.global-map-country-list li > span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.global-map-country-check {
+  opacity: 0.7;
+}
+
+.single-region .global-map-country-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 0;
+}
+
+.global-map-region-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 15px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.global-map-region-action:hover {
+  color: var(--color-white);
+}
+
+.global-map-region-action svg {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   MARKET ENQUIRY
+======================================== */
+
+.global-map-enquiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 35px;
+  padding: 30px;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 10px;
+  background: rgba(197, 160, 82, 0.06);
+}
+
+.global-map-enquiry h3 {
+  margin-bottom: 10px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.global-map-enquiry p {
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.global-map-enquiry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  min-height: 48px;
+  padding: 15px 22px;
+  border: 1px solid var(--color-gold);
+  border-radius: 5px;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.global-map-enquiry-button:hover {
+  border-color: var(--color-gold-light);
+  background: var(--color-gold-light);
+}
+
+.global-map-enquiry-button svg {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   DISCLAIMER
+======================================== */
+
+.global-map-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 17px;
+  border-left: 2px solid var(--color-gold);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.global-map-disclaimer > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-gold-light);
+}
+
+.global-map-disclaimer p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.global-map-filter:focus-visible,
+.global-map-region-action:focus-visible,
+.global-map-enquiry-button:focus-visible {
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: 4px;
+}
+
+.global-map-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media screen and (max-width: 1359px) {
+  .global-map-region-grid {
+    gap: 15px;
+  }
+
+  .global-map-region-card {
+    padding: 18px;
+  }
+
+  .global-map-region-header {
+    gap: 10px;
+  }
+
+  .global-map-region-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .global-map-region-header h4 {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .global-map-container {
+    width: calc(100% - 64px);
+  }
+
+  .global-map-region-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .single-region .global-map-country-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .global-map-region-card {
+    padding: 23px;
+  }
+
+  .global-map-enquiry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .global-map-visual {
+    padding: 10px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .global-map-container {
+    width: calc(100% - 40px);
+  }
+
+  .global-map-heading {
+    margin-bottom: 28px;
+  }
+
+  .global-map-eyebrow {
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .global-map-eyebrow > span {
+    width: 15px;
+  }
+
+  .global-map-heading h2 {
+    font-size: 35px;
+  }
+
+  .global-map-heading p {
+    font-size: 13px;
+  }
+
+  .global-map-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .global-map-filter {
+    gap: 7px;
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .global-map-filter:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .global-map-filter-count {
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .global-map-filter > svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .global-map-visual {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .global-map-legend {
+    gap: 12px 20px;
+    margin-bottom: 30px;
+  }
+
+  .global-map-legend-item {
+    font-size: 10px;
+  }
+
+  .global-map-summary {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .global-map-summary-stats {
+    justify-content: space-around;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .global-map-summary-stats strong {
+    font-size: 34px;
+  }
+
+  .global-map-region-grid,
+  .single-region .global-map-country-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .global-map-region-card {
+    padding: 20px;
+  }
+
+  .global-map-enquiry {
+    margin-top: 25px;
+    padding: 22px;
+  }
+
+  .global-map-enquiry h3 {
+    font-size: 23px;
+  }
+
+  .global-map-enquiry-button {
+    width: 100%;
+    padding: 13px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .global-map-disclaimer {
+    padding: 13px;
+  }
+
+  .global-map-disclaimer p {
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .global-map-container {
+    width: calc(100% - 32px);
+  }
+
+  .global-map-heading h2 {
+    font-size: 30px;
+  }
+
+  .global-map-eyebrow {
+    font-size: 9px;
+  }
+
+  .global-map-filter {
+    font-size: 10px;
+  }
+
+  .global-map-filter > svg {
+    display: none;
+  }
+
+  .global-map-region-card,
+  .global-map-enquiry {
+    padding: 17px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .global-map-filter,
+  .global-map-region-card,
+  .global-map-region-action,
+  .global-map-enquiry-button {
+    transition: none;
+  }
+}
