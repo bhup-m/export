@@ -1,0 +1,664 @@
+
+/* ========================================
+   AGRICULTURAL SOURCING STRENGTHS
+======================================== */
+
+.sourcing-strengths {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background-color: var(--color-white);
+}
+
+.sourcing-strengths-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.sourcing-strengths-header {
+  max-width: 850px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.sourcing-strengths-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #98752e;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.5;
+}
+
+.sourcing-strengths-eyebrow > span {
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.sourcing-strengths-header h2 {
+  margin: 0 0 22px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.sourcing-strengths-header h2 > span {
+  display: block;
+  margin-top: 6px;
+  color: #98752e;
+}
+
+.sourcing-strengths-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* ========================================
+   MAIN GRID
+======================================== */
+
+.sourcing-strengths-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+  align-items: stretch;
+  gap: 65px;
+}
+
+/* ========================================
+   AGRICULTURAL IMAGE
+======================================== */
+
+.sourcing-strengths-visual {
+  min-width: 0;
+}
+
+.sourcing-strengths-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 6px;
+  background-color: var(--color-primary);
+}
+
+.sourcing-strengths-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.7s ease;
+}
+
+.sourcing-strengths-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 25%,
+    rgba(9, 27, 50, 0.35) 50%,
+    rgba(9, 27, 50, 0.96) 100%
+  );
+  pointer-events: none;
+}
+
+.sourcing-strengths-image-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 36px;
+  z-index: 1;
+}
+
+.sourcing-strengths-image-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--color-gold-light);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+}
+
+.sourcing-strengths-image-label svg {
+  flex-shrink: 0;
+}
+
+.sourcing-strengths-image-content h3 {
+  margin: 0 0 14px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sourcing-strengths-image-content p {
+  max-width: 380px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.sourcing-strengths-image-accent {
+  width: 50px;
+  height: 3px;
+  margin-top: 22px;
+  background-color: var(--color-gold);
+}
+
+@media (hover: hover) {
+  .sourcing-strengths-image-wrapper:hover
+  .sourcing-strengths-image {
+    transform: scale(1.045);
+  }
+}
+
+/* ========================================
+   SOURCING ADVANTAGES
+======================================== */
+
+.sourcing-strengths-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.sourcing-strengths-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sourcing-strengths-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sourcing-strengths-item:first-child {
+  padding-top: 0;
+}
+
+.sourcing-strengths-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 5px;
+  background-color: rgba(197, 160, 82, 0.08);
+  color: #98752e;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sourcing-strengths-item-content {
+  min-width: 0;
+}
+
+.sourcing-strengths-item-content h3 {
+  margin: 0 0 7px;
+  color: var(--color-heading);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sourcing-strengths-item-content p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (hover: hover) {
+  .sourcing-strengths-item:hover
+  .sourcing-strengths-item-icon {
+    background-color: var(--color-primary);
+    color: var(--color-gold-light);
+  }
+}
+
+/* ========================================
+   SOURCING CTA
+======================================== */
+
+.sourcing-strengths-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 30px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-gold);
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sourcing-strengths-link svg {
+  flex-shrink: 0;
+  color: #98752e;
+  transition: transform 0.3s ease;
+}
+
+.sourcing-strengths-link:hover {
+  color: #98752e;
+}
+
+.sourcing-strengths-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.sourcing-strengths-link:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+/* ========================================
+   SOURCING HIGHLIGHTS
+======================================== */
+
+.sourcing-strengths-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 55px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: var(--color-off-white);
+}
+
+.sourcing-strengths-highlight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 8px 20px;
+}
+
+.sourcing-strengths-highlight:not(:last-child) {
+  border-right: 1px solid #e0e2e5;
+}
+
+.sourcing-strengths-highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 1px solid rgba(197, 160, 82, 0.25);
+  border-radius: 50%;
+  color: #98752e;
+}
+
+.sourcing-strengths-highlight-content {
+  min-width: 0;
+}
+
+.sourcing-strengths-highlight-content h3 {
+  margin: 0 0 5px;
+  color: var(--color-heading);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sourcing-strengths-highlight-content p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .sourcing-strengths-header {
+    margin-bottom: 65px;
+  }
+
+  .sourcing-strengths-header h2 {
+    font-size: 60px;
+  }
+
+  .sourcing-strengths-grid {
+    gap: 90px;
+  }
+
+  .sourcing-strengths-image-wrapper {
+    min-height: 680px;
+  }
+
+  .sourcing-strengths-image-content {
+    padding: 45px;
+  }
+
+  .sourcing-strengths-image-content h3 {
+    font-size: 40px;
+  }
+
+  .sourcing-strengths-item {
+    padding: 23px 0;
+  }
+
+  .sourcing-strengths-item-content h3 {
+    font-size: 19px;
+  }
+
+  .sourcing-strengths-item-content p {
+    font-size: 15px;
+  }
+
+  .sourcing-strengths-highlights {
+    margin-top: 65px;
+    padding: 40px;
+  }
+}
+
+/* ========================================
+   LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .sourcing-strengths-header {
+    margin-bottom: 45px;
+  }
+
+  .sourcing-strengths-grid {
+    gap: 40px;
+  }
+
+  .sourcing-strengths-image-wrapper {
+    min-height: 580px;
+  }
+
+  .sourcing-strengths-image-content {
+    padding: 28px;
+  }
+
+  .sourcing-strengths-image-content h3 {
+    font-size: 30px;
+  }
+
+  .sourcing-strengths-item {
+    gap: 14px;
+    padding: 16px 0;
+  }
+
+  .sourcing-strengths-item-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sourcing-strengths-item-content h3 {
+    font-size: 16px;
+  }
+
+  .sourcing-strengths-item-content p {
+    font-size: 13px;
+  }
+
+  .sourcing-strengths-highlights {
+    gap: 16px;
+    padding: 25px;
+  }
+
+  .sourcing-strengths-highlight {
+    gap: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sourcing-strengths-container {
+    width: calc(100% - 64px);
+  }
+
+  .sourcing-strengths-header {
+    margin-bottom: 40px;
+  }
+
+  .sourcing-strengths-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .sourcing-strengths-image-wrapper {
+    min-height: 430px;
+  }
+
+  .sourcing-strengths-highlights {
+    gap: 15px;
+    padding: 25px 15px;
+  }
+
+  .sourcing-strengths-highlight {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 12px;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .sourcing-strengths-container {
+    width: calc(100% - 40px);
+  }
+
+  .sourcing-strengths-header {
+    margin-bottom: 32px;
+  }
+
+  .sourcing-strengths-eyebrow {
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .sourcing-strengths-eyebrow > span {
+    width: 16px;
+  }
+
+  .sourcing-strengths-header h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .sourcing-strengths-header p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .sourcing-strengths-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .sourcing-strengths-image-wrapper {
+    min-height: 370px;
+  }
+
+  .sourcing-strengths-image-content {
+    padding: 24px;
+  }
+
+  .sourcing-strengths-image-label {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+
+  .sourcing-strengths-image-content h3 {
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+
+  .sourcing-strengths-image-content p {
+    font-size: 13px;
+  }
+
+  .sourcing-strengths-image-accent {
+    margin-top: 16px;
+  }
+
+  .sourcing-strengths-item {
+    gap: 13px;
+    padding: 17px 0;
+  }
+
+  .sourcing-strengths-item-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sourcing-strengths-item-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sourcing-strengths-item-content h3 {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  .sourcing-strengths-item-content p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .sourcing-strengths-link {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .sourcing-strengths-highlights {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 35px;
+    padding: 10px 22px;
+  }
+
+  .sourcing-strengths-highlight {
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .sourcing-strengths-highlight:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #e0e2e5;
+  }
+
+  .sourcing-strengths-highlight-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sourcing-strengths-highlight-icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .sourcing-strengths-highlight-content h3 {
+    font-size: 15px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .sourcing-strengths-container {
+    width: calc(100% - 32px);
+  }
+
+  .sourcing-strengths-header h2 {
+    font-size: 30px;
+  }
+
+  .sourcing-strengths-image-wrapper {
+    min-height: 330px;
+  }
+
+  .sourcing-strengths-image-content {
+    padding: 20px;
+  }
+
+  .sourcing-strengths-image-content h3 {
+    font-size: 25px;
+  }
+
+  .sourcing-strengths-highlights {
+    padding: 8px 16px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sourcing-strengths-image,
+  .sourcing-strengths-item-icon,
+  .sourcing-strengths-link,
+  .sourcing-strengths-link svg {
+    transition: none;
+  }
+
+  .sourcing-strengths-image-wrapper:hover
+  .sourcing-strengths-image,
+  .sourcing-strengths-link:hover svg {
+    transform: none;
+  }
+}

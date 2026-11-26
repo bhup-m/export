@@ -1,0 +1,10 @@
+
+/* ========================================
+   ABOUT US PAGE
+======================================== */
+
+.about-page {
+  width: 100%;
+  min-width: 0;
+  background-color: var(--color-white);
+}

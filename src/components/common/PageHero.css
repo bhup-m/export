@@ -1,0 +1,266 @@
+
+/* ========================================
+   REUSABLE INNER PAGE HERO
+======================================== */
+
+.page-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 460px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--color-primary-dark);
+}
+
+/* Background */
+
+.page-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(9, 27, 50, 0.96) 0%,
+    rgba(9, 27, 50, 0.86) 35%,
+    rgba(9, 27, 50, 0.58) 70%,
+    rgba(9, 27, 50, 0.32) 100%
+  );
+}
+
+/* Container */
+
+.page-hero-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+.page-hero-content {
+  max-width: 850px;
+}
+
+/* Eyebrow */
+
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  color: var(--color-gold-light);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.page-hero-eyebrow > span {
+  width: 35px;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+/* Main Heading */
+
+.page-hero h1 {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4.2vw, 68px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.page-hero h1 > span {
+  display: block;
+  margin-top: 6px;
+  color: var(--color-gold-light);
+}
+
+/* Description */
+
+.page-hero-description {
+  max-width: 650px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.85;
+}
+
+/* Decorative Accent */
+
+.page-hero-accent {
+  width: 65px;
+  height: 3px;
+  margin-top: 30px;
+  background: linear-gradient(
+    90deg,
+    var(--color-gold),
+    var(--color-gold-light)
+  );
+}
+
+/* ========================================
+   LARGE DESKTOP
+======================================== */
+
+@media (min-width: 1600px) {
+  .page-hero {
+    min-height: 540px;
+  }
+
+  .page-hero-container {
+    padding: 90px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 76px;
+  }
+}
+
+/* ========================================
+   SMALL DESKTOP / LAPTOP
+======================================== */
+
+@media (min-width: 1025px) and (max-width: 1359px) {
+  .page-hero {
+    min-height: 410px;
+  }
+
+  .page-hero-container {
+    padding: 60px 0;
+  }
+
+  .page-hero-description {
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page-hero {
+    min-height: 380px;
+  }
+
+  .page-hero-container {
+    width: calc(100% - 64px);
+    padding: 55px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 48px;
+  }
+
+  .page-hero-description {
+    max-width: 550px;
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+  .page-hero {
+    min-height: 350px;
+  }
+
+  .page-hero-container {
+    width: calc(100% - 40px);
+    padding: 45px 0;
+  }
+
+  .page-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(9, 27, 50, 0.94) 0%,
+      rgba(9, 27, 50, 0.78) 100%
+    );
+  }
+
+  .page-hero-eyebrow {
+    gap: 9px;
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .page-hero-eyebrow > span {
+    width: 25px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 7.5vw, 44px);
+    letter-spacing: -0.7px;
+    line-height: 1.2;
+  }
+
+  .page-hero-description {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .page-hero-accent {
+    width: 45px;
+    height: 2px;
+    margin-top: 24px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+  .page-hero {
+    min-height: 320px;
+  }
+
+  .page-hero-container {
+    width: calc(100% - 32px);
+    padding: 35px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 30px;
+  }
+}
+
+/* ========================================
+   SHORT DESKTOP SCREENS
+======================================== */
+
+@media (min-width: 1360px) and (max-height: 700px) {
+  .page-hero {
+    min-height: 380px;
+  }
+
+  .page-hero-container {
+    padding: 50px 0;
+  }
+
+  .page-hero h1 {
+    font-size: 56px;
+  }
+}
