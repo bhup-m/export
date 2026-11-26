@@ -1,0 +1,762 @@
+
+.sourcing-process {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background: var(--color-white);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sourcing-process-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+/* ========================================
+   Section Heading
+======================================== */
+
+.sourcing-process-heading {
+  max-width: 900px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.sourcing-process-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #806322;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.sourcing-process-eyebrow span {
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.sourcing-process-heading h2 {
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sourcing-process-heading h2 span {
+  display: block;
+  margin-top: 6px;
+  color: #98752e;
+}
+
+.sourcing-process-heading > p {
+  max-width: 720px;
+  margin-inline: auto;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   Timeline
+======================================== */
+
+.sourcing-process-timeline {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.sourcing-process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  bottom: 36px;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    var(--color-gold),
+    rgba(197, 160, 82, 0.3),
+    var(--color-gold)
+  );
+}
+
+.sourcing-process-step {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    100px
+    minmax(0, 1fr);
+  align-items: start;
+  padding-bottom: 32px;
+}
+
+.sourcing-process-step:last-child {
+  padding-bottom: 0;
+}
+
+.sourcing-process-step-left .sourcing-process-card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sourcing-process-step-right .sourcing-process-card {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* ========================================
+   Timeline Marker
+======================================== */
+
+.sourcing-process-marker {
+  position: relative;
+  z-index: 2;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: 72px;
+  height: 72px;
+}
+
+.sourcing-process-marker-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-gold);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-gold-light);
+  box-shadow: 0 0 0 7px var(--color-white);
+  box-sizing: border-box;
+}
+
+.sourcing-process-marker-number {
+  position: absolute;
+  right: -4px;
+  bottom: -5px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ========================================
+   Timeline Content Cards
+======================================== */
+
+.sourcing-process-card {
+  position: relative;
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid #e5e7eb;
+  border-top: 3px solid var(--color-gold);
+  border-radius: 6px;
+  background: var(--color-off-white);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sourcing-process-card:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 30px rgba(16, 39, 71, 0.1);
+}
+
+/* Connect Cards to Timeline */
+
+.sourcing-process-card::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  width: 15px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+.sourcing-process-step-left .sourcing-process-card::before {
+  right: -16px;
+}
+
+.sourcing-process-step-right .sourcing-process-card::before {
+  left: -16px;
+}
+
+/* Card Header */
+
+.sourcing-process-card-header {
+  margin-bottom: 20px;
+}
+
+.sourcing-process-card-number {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #806322;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.sourcing-process-card-header h3 {
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sourcing-process-card-subtitle {
+  display: block;
+  color: #806322;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.sourcing-process-card-description {
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* Card Highlights */
+
+.sourcing-process-card-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sourcing-process-card-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sourcing-process-card-highlights svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #98752e;
+}
+
+/* Intended Outcome */
+
+.sourcing-process-outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border-left: 3px solid var(--color-gold);
+  border-radius: 3px;
+  background: rgba(197, 160, 82, 0.1);
+}
+
+.sourcing-process-outcome svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #98752e;
+}
+
+.sourcing-process-outcome-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #806322;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.sourcing-process-outcome p {
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Sourcing Principles
+======================================== */
+
+.sourcing-process-principles {
+  margin-top: 70px;
+  padding: 45px 35px;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    #091b32,
+    #102747 65%,
+    #193654
+  );
+}
+
+.sourcing-process-principles-heading {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.sourcing-process-principles-heading > span {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.sourcing-process-principles-heading h3 {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sourcing-process-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.sourcing-process-principle {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 25px 20px;
+  border: 1px solid rgba(197, 160, 82, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.045);
+  text-align: center;
+}
+
+.sourcing-process-principle-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 50%;
+  background: rgba(197, 160, 82, 0.08);
+  color: var(--color-gold-light);
+}
+
+.sourcing-process-principle h4 {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sourcing-process-principle p {
+  max-width: 260px;
+  color: #c9d3df;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   Process Note
+======================================== */
+
+.sourcing-process-note {
+  max-width: 850px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin: 28px auto 0;
+}
+
+.sourcing-process-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #98752e;
+}
+
+.sourcing-process-note p {
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   Large Desktop
+======================================== */
+
+@media screen and (min-width: 1600px) {
+  .sourcing-process-heading {
+    margin-bottom: 80px;
+  }
+
+  .sourcing-process-heading h2 {
+    font-size: 60px;
+  }
+
+  .sourcing-process-heading > p {
+    font-size: 17px;
+  }
+
+  .sourcing-process-timeline {
+    max-width: 1320px;
+  }
+
+  .sourcing-process-step {
+    grid-template-columns:
+      minmax(0, 1fr)
+      120px
+      minmax(0, 1fr);
+    padding-bottom: 40px;
+  }
+
+  .sourcing-process-card {
+    padding: 36px;
+  }
+
+  .sourcing-process-card::before {
+    width: 25px;
+  }
+
+  .sourcing-process-step-left .sourcing-process-card::before {
+    right: -26px;
+  }
+
+  .sourcing-process-step-right .sourcing-process-card::before {
+    left: -26px;
+  }
+
+  .sourcing-process-card-header h3 {
+    font-size: 31px;
+  }
+
+  .sourcing-process-card-description {
+    font-size: 15px;
+  }
+
+  .sourcing-process-principles {
+    margin-top: 85px;
+    padding: 55px 45px;
+  }
+}
+
+/* ========================================
+   Laptop
+======================================== */
+
+@media screen and (min-width: 1025px)
+  and (max-width: 1359px) {
+
+  .sourcing-process-heading {
+    margin-bottom: 50px;
+  }
+
+  .sourcing-process-card {
+    padding: 25px;
+  }
+
+  .sourcing-process-card-header h3 {
+    font-size: 25px;
+  }
+
+  .sourcing-process-principles {
+    margin-top: 55px;
+  }
+}
+
+/* ========================================
+   Tablet - Vertical Timeline
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .sourcing-process-container {
+    width: calc(100% - 64px);
+  }
+
+  .sourcing-process-heading {
+    margin-bottom: 45px;
+  }
+
+  .sourcing-process-timeline {
+    max-width: 760px;
+  }
+
+  .sourcing-process-timeline::before {
+    left: 35px;
+    top: 28px;
+    bottom: 28px;
+  }
+
+  .sourcing-process-step {
+    grid-template-columns:
+      70px
+      minmax(0, 1fr);
+    gap: 20px;
+    padding-bottom: 25px;
+  }
+
+  .sourcing-process-step-left .sourcing-process-card,
+  .sourcing-process-step-right .sourcing-process-card {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sourcing-process-marker {
+    grid-column: 1;
+    width: 56px;
+    height: 56px;
+  }
+
+  .sourcing-process-marker-icon {
+    border-width: 2px;
+    box-shadow: 0 0 0 5px var(--color-white);
+  }
+
+  .sourcing-process-marker-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sourcing-process-marker-number {
+    width: 22px;
+    height: 22px;
+    font-size: 9px;
+  }
+
+  .sourcing-process-step-left .sourcing-process-card::before,
+  .sourcing-process-step-right .sourcing-process-card::before {
+    top: 26px;
+    left: -28px;
+    right: auto;
+    width: 27px;
+  }
+
+  .sourcing-process-principles {
+    margin-top: 45px;
+    padding: 35px 25px;
+  }
+
+  .sourcing-process-principles-grid {
+    gap: 15px;
+  }
+
+  .sourcing-process-principle {
+    padding: 22px 15px;
+  }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .sourcing-process-container {
+    width: calc(100% - 40px);
+  }
+
+  .sourcing-process-heading {
+    margin-bottom: 35px;
+  }
+
+  .sourcing-process-eyebrow {
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+
+  .sourcing-process-eyebrow span {
+    width: 20px;
+  }
+
+  .sourcing-process-heading h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .sourcing-process-heading > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .sourcing-process-timeline::before {
+    left: 23px;
+    top: 21px;
+    bottom: 21px;
+  }
+
+  .sourcing-process-step {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr);
+    gap: 12px;
+    padding-bottom: 20px;
+  }
+
+  .sourcing-process-marker {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sourcing-process-marker-icon {
+    box-shadow: 0 0 0 3px var(--color-white);
+  }
+
+  .sourcing-process-marker-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sourcing-process-marker-number {
+    width: 19px;
+    height: 19px;
+    font-size: 8px;
+  }
+
+  .sourcing-process-step-left .sourcing-process-card::before,
+  .sourcing-process-step-right .sourcing-process-card::before {
+    top: 18px;
+    left: -15px;
+    width: 14px;
+  }
+
+  .sourcing-process-card {
+    padding: 20px;
+  }
+
+  .sourcing-process-card-header {
+    margin-bottom: 16px;
+  }
+
+  .sourcing-process-card-header h3 {
+    font-size: 23px;
+  }
+
+  .sourcing-process-card-subtitle {
+    font-size: 11px;
+  }
+
+  .sourcing-process-card-description {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .sourcing-process-card-highlights {
+    gap: 10px;
+    margin-block: 18px;
+  }
+
+  .sourcing-process-card-highlights li {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .sourcing-process-outcome {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .sourcing-process-outcome p {
+    font-size: 11px;
+  }
+
+  .sourcing-process-principles {
+    margin-top: 35px;
+    padding: 28px 20px;
+  }
+
+  .sourcing-process-principles-heading {
+    margin-bottom: 25px;
+  }
+
+  .sourcing-process-principles-heading h3 {
+    font-size: 28px;
+  }
+
+  .sourcing-process-principles-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .sourcing-process-principle {
+    padding: 24px 20px;
+  }
+
+  .sourcing-process-note {
+    margin-top: 22px;
+  }
+
+  .sourcing-process-note p {
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .sourcing-process-container {
+    width: calc(100% - 32px);
+  }
+
+  .sourcing-process-heading h2 {
+    font-size: 30px;
+  }
+
+  .sourcing-process-card {
+    padding: 16px;
+  }
+
+  .sourcing-process-card-header h3 {
+    font-size: 21px;
+  }
+
+  .sourcing-process-principles {
+    padding: 24px 16px;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sourcing-process-card {
+    transition: none;
+  }
+}

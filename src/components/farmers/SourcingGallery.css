@@ -1,0 +1,861 @@
+
+.sourcing-gallery {
+  width: 100%;
+  padding: var(--section-spacing) 0;
+  background: var(--color-white);
+  box-sizing: border-box;
+}
+
+.sourcing-gallery-container {
+  width: calc(100% - 80px);
+  max-width: var(--container-width);
+  margin-inline: auto;
+}
+
+/* ========================================
+   Section Heading
+======================================== */
+
+.sourcing-gallery-heading {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.sourcing-gallery-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #806322;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.sourcing-gallery-eyebrow span {
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-gold);
+}
+
+.sourcing-gallery-heading h2 {
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.sourcing-gallery-heading h2 span {
+  display: block;
+  margin-top: 6px;
+  color: #98752e;
+}
+
+.sourcing-gallery-heading > p {
+  max-width: 720px;
+  margin-inline: auto;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   Gallery Filters
+======================================== */
+
+.sourcing-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.sourcing-gallery-filter {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border: 1px solid #e0e3e7;
+  border-radius: 4px;
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sourcing-gallery-filter:hover {
+  border-color: var(--color-gold);
+  background: rgba(197, 160, 82, 0.08);
+}
+
+.sourcing-gallery-filter-active,
+.sourcing-gallery-filter-active:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.sourcing-gallery-filter-count {
+  min-width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 5px;
+  border-radius: 3px;
+  background: var(--color-off-white);
+  color: var(--color-primary);
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+.sourcing-gallery-filter-active
+.sourcing-gallery-filter-count {
+  background: rgba(197, 160, 82, 0.18);
+  color: var(--color-gold-light);
+}
+
+/* ========================================
+   Gallery Summary
+======================================== */
+
+.sourcing-gallery-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sourcing-gallery-summary-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sourcing-gallery-summary-label svg {
+  color: #98752e;
+}
+
+.sourcing-gallery-summary > p {
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Gallery Grid
+======================================== */
+
+.sourcing-gallery-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 260px;
+  gap: 20px;
+}
+
+.sourcing-gallery-grid-masonry {
+  grid-auto-flow: dense;
+}
+
+.sourcing-gallery-item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  border-radius: 6px;
+  background: var(--color-off-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.sourcing-gallery-item-tall {
+  grid-row: span 2;
+}
+
+/* ========================================
+   Image Button
+======================================== */
+
+.sourcing-gallery-image-button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-primary);
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.sourcing-gallery-image-button img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.sourcing-gallery-image-button:hover img {
+  transform: scale(1.06);
+}
+
+.sourcing-gallery-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 27, 50, 0.12) 0%,
+    transparent 25%,
+    rgba(9, 27, 50, 0.25) 45%,
+    rgba(9, 27, 50, 0.94) 100%
+  );
+  pointer-events: none;
+}
+
+.sourcing-gallery-expand-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  background: rgba(9, 27, 50, 0.7);
+  color: var(--color-white);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sourcing-gallery-image-button:hover
+.sourcing-gallery-expand-icon {
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+/* ========================================
+   Image Caption
+======================================== */
+
+.sourcing-gallery-image-content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+}
+
+.sourcing-gallery-image-category {
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.sourcing-gallery-image-title {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ========================================
+   Empty State
+======================================== */
+
+.sourcing-gallery-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 20px;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  background: var(--color-off-white);
+  text-align: center;
+}
+
+.sourcing-gallery-empty > svg {
+  color: #98752e;
+}
+
+.sourcing-gallery-empty h3 {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 25px;
+}
+
+.sourcing-gallery-empty p {
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.sourcing-gallery-empty button {
+  padding: 12px 22px;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ========================================
+   Gallery Note
+======================================== */
+
+.sourcing-gallery-note {
+  max-width: 850px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px auto 0;
+}
+
+.sourcing-gallery-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #98752e;
+}
+
+.sourcing-gallery-note p {
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   Native Fullscreen Dialog
+======================================== */
+
+.sourcing-gallery-dialog {
+  position: fixed;
+  inset: 0;
+  width: calc(100% - 48px);
+  max-width: 1150px;
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(197, 160, 82, 0.4);
+  border-radius: 8px;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.sourcing-gallery-dialog::backdrop {
+  background: rgba(4, 12, 24, 0.92);
+  backdrop-filter: blur(6px);
+}
+
+body:has(.sourcing-gallery-dialog[open]) {
+  overflow: hidden;
+}
+
+.sourcing-gallery-dialog-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   Dialog Header
+======================================== */
+
+.sourcing-gallery-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sourcing-gallery-dialog-heading {
+  min-width: 0;
+}
+
+.sourcing-gallery-dialog-heading > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.sourcing-gallery-dialog-heading h2 {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.sourcing-gallery-dialog-close {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.sourcing-gallery-dialog-close:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-light);
+}
+
+/* ========================================
+   Dialog Image Stage
+======================================== */
+
+.sourcing-gallery-dialog-stage {
+  position: relative;
+  width: 100%;
+  height: min(62dvh, 700px);
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #050f1d;
+}
+
+.sourcing-gallery-dialog-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sourcing-gallery-dialog-arrow {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: rgba(9, 27, 50, 0.85);
+  color: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sourcing-gallery-dialog-arrow:hover {
+  background: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.sourcing-gallery-dialog-prev {
+  left: 18px;
+}
+
+.sourcing-gallery-dialog-next {
+  right: 18px;
+}
+
+/* ========================================
+   Dialog Footer
+======================================== */
+
+.sourcing-gallery-dialog-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 28px;
+}
+
+.sourcing-gallery-dialog-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.sourcing-gallery-dialog-description p {
+  color: #d2dce8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sourcing-gallery-dialog-description > span {
+  display: block;
+  margin-top: 8px;
+  color: var(--color-gold-light);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.sourcing-gallery-dialog-counter {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border: 1px solid rgba(197, 160, 82, 0.3);
+  border-radius: 4px;
+  background: rgba(197, 160, 82, 0.08);
+  color: var(--color-gold-light);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sourcing-gallery-dialog-hint {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bfcddd;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ========================================
+   Keyboard Accessibility
+======================================== */
+
+.sourcing-gallery button:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.sourcing-gallery-image-button:focus-visible {
+  outline-offset: -4px;
+}
+
+/* ========================================
+   Large Desktop
+======================================== */
+
+@media screen and (min-width: 1600px) {
+  .sourcing-gallery-heading {
+    margin-bottom: 55px;
+  }
+
+  .sourcing-gallery-heading h2 {
+    font-size: 60px;
+  }
+
+  .sourcing-gallery-heading > p {
+    font-size: 17px;
+  }
+
+  .sourcing-gallery-grid {
+    grid-auto-rows: 310px;
+    gap: 25px;
+  }
+
+  .sourcing-gallery-image-title {
+    font-size: 28px;
+  }
+
+  .sourcing-gallery-image-content {
+    padding: 28px;
+  }
+}
+
+/* ========================================
+   Laptop
+======================================== */
+
+@media screen and (min-width: 1025px)
+  and (max-width: 1359px) {
+
+  .sourcing-gallery-grid {
+    grid-auto-rows: 230px;
+    gap: 16px;
+  }
+
+  .sourcing-gallery-image-title {
+    font-size: 22px;
+  }
+
+  .sourcing-gallery-image-content {
+    padding: 20px;
+  }
+}
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media screen and (max-width: 1024px) {
+  .sourcing-gallery-container {
+    width: calc(100% - 64px);
+  }
+
+  .sourcing-gallery-heading {
+    margin-bottom: 35px;
+  }
+
+  .sourcing-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 260px;
+    gap: 18px;
+  }
+
+  .sourcing-gallery-grid-masonry {
+    grid-auto-flow: row;
+  }
+
+  .sourcing-gallery-item-tall {
+    grid-row: span 1;
+  }
+
+  .sourcing-gallery-image-title {
+    font-size: 23px;
+  }
+}
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media screen and (max-width: 767px) {
+  .sourcing-gallery-container {
+    width: calc(100% - 40px);
+  }
+
+  .sourcing-gallery-heading {
+    margin-bottom: 30px;
+  }
+
+  .sourcing-gallery-eyebrow {
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+
+  .sourcing-gallery-eyebrow span {
+    width: 20px;
+  }
+
+  .sourcing-gallery-heading h2 {
+    margin-bottom: 18px;
+    font-size: 34px;
+  }
+
+  .sourcing-gallery-heading > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .sourcing-gallery-filters {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .sourcing-gallery-filter {
+    gap: 7px;
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .sourcing-gallery-filter-count {
+    min-width: 19px;
+    height: 19px;
+    font-size: 9px;
+  }
+
+  .sourcing-gallery-summary {
+    gap: 8px;
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+  }
+
+  .sourcing-gallery-summary-label {
+    font-size: 13px;
+  }
+
+  .sourcing-gallery-summary > p {
+    font-size: 11px;
+  }
+
+  .sourcing-gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: 280px;
+    gap: 16px;
+  }
+
+  .sourcing-gallery-image-content {
+    padding: 22px;
+  }
+
+  .sourcing-gallery-expand-icon {
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .sourcing-gallery-note {
+    margin-top: 22px;
+  }
+
+  .sourcing-gallery-note p {
+    font-size: 11px;
+  }
+
+  /* Mobile Preview Dialog */
+
+  .sourcing-gallery-dialog {
+    width: calc(100% - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .sourcing-gallery-dialog-header {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .sourcing-gallery-dialog-heading h2 {
+    font-size: 21px;
+  }
+
+  .sourcing-gallery-dialog-heading > span {
+    font-size: 9px;
+  }
+
+  .sourcing-gallery-dialog-stage {
+    height: 45dvh;
+  }
+
+  .sourcing-gallery-dialog-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sourcing-gallery-dialog-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sourcing-gallery-dialog-prev {
+    left: 8px;
+  }
+
+  .sourcing-gallery-dialog-next {
+    right: 8px;
+  }
+
+  .sourcing-gallery-dialog-footer {
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px 16px;
+  }
+
+  .sourcing-gallery-dialog-description p {
+    font-size: 12px;
+  }
+
+  .sourcing-gallery-dialog-counter {
+    align-self: center;
+    font-size: 12px;
+  }
+
+  .sourcing-gallery-dialog-hint {
+    display: none;
+  }
+}
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media screen and (max-width: 400px) {
+  .sourcing-gallery-container {
+    width: calc(100% - 32px);
+  }
+
+  .sourcing-gallery-heading h2 {
+    font-size: 30px;
+  }
+
+  .sourcing-gallery-grid {
+    grid-auto-rows: 240px;
+  }
+
+  .sourcing-gallery-image-content {
+    padding: 18px;
+  }
+
+  .sourcing-gallery-image-title {
+    font-size: 21px;
+  }
+
+  .sourcing-gallery-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ========================================
+   Reduced Motion
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .sourcing-gallery-image-button img,
+  .sourcing-gallery-filter,
+  .sourcing-gallery-expand-icon,
+  .sourcing-gallery-dialog-arrow {
+    transition: none;
+  }
+
+  .sourcing-gallery-image-button:hover img {
+    transform: none;
+  }
+}
